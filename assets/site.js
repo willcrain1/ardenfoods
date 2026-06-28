@@ -47,6 +47,21 @@
     });
   }
 
+  /* ---------- papel picado bunting (decorative) ---------- */
+  function buildBunting() {
+    var colors = ["#d81b68", "#ff8a3d", "#ffc23c", "#8fd14f", "#00bfc2"];
+    var flags = "";
+    for (var i = 0; i < 60; i++) {
+      flags += '<div class="pennant" style="background:' + colors[i % colors.length] + '"></div>';
+    }
+    var bunting = document.createElement("div");
+    bunting.className = "papel-picado";
+    bunting.setAttribute("aria-hidden", "true");
+    bunting.innerHTML = flags;
+    var nav = document.querySelector("header.nav");
+    nav.parentNode.insertBefore(bunting, nav.nextSibling);
+  }
+
   /* ---------- FOOTER ---------- */
   function buildFooter() {
     var year = new Date().getFullYear();
@@ -119,6 +134,7 @@
 
   function init() {
     buildNav();
+    buildBunting();
     buildFooter();
     initReveal();
     initAddToCart();

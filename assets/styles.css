@@ -1,23 +1,25 @@
 /* ============================================================
    Arden Foods Co. — shared stylesheet (all pages)
+   Tropical Mexican palette: bougainvillea pink, papaya orange,
+   marigold yellow, Caribbean turquoise, palm-leaf lime.
    ============================================================ */
 :root {
-  --pepper:    #d61f2b;
-  --pepper-dk: #9c1019;
-  --habanero:  #f97316;
-  --ember:     #ffb43b;
-  --char:      #1a0e0a;
-  --char-2:    #2a1812;
-  --cream:     #fbf3e4;
-  --cream-2:   #f3e6cf;
-  --lime:      #b6e02a;
-  --lake:      #2bb0c9;
-  --ink:       #2a1812;
+  --pepper:    #d81b68;   /* bougainvillea pink */
+  --pepper-dk: #a10f4e;   /* deep magenta */
+  --habanero:  #ff8a3d;   /* papaya / mango orange */
+  --ember:     #ffc23c;   /* marigold yellow */
+  --char:      #122021;   /* tropical night */
+  --char-2:    #1b3331;
+  --cream:     #fff8e7;   /* warm sand */
+  --cream-2:   #fceac2;
+  --lime:      #8fd14f;   /* palm leaf */
+  --lake:      #00bfc2;   /* Caribbean turquoise */
+  --ink:       #2a1b12;
 
   --maxw: 1140px;
   --r: 18px;
   --shadow: 0 18px 40px -18px rgba(0,0,0,.55);
-  --font-display: 'Anton', 'Arial Narrow', sans-serif;
+  --font-display: 'Bungee', 'Anton', 'Arial Narrow', sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
@@ -59,7 +61,7 @@ body::before {
 .btn-dark { background: var(--char); color: var(--cream); }
 .btn-dark:hover { background: var(--char-2); transform: translateY(-2px); }
 .btn-lime { background: var(--lime); color: var(--char); }
-.btn-lime:hover { background: #c8f23e; transform: translateY(-2px); }
+.btn-lime:hover { background: #a6e066; transform: translateY(-2px); }
 .btn[disabled] { opacity: .55; cursor: not-allowed; transform: none; }
 .btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--lake); outline-offset: 3px; }
 
@@ -95,18 +97,18 @@ header.nav {
 .hero {
   position: relative; color: var(--cream); overflow: hidden;
   background:
-    radial-gradient(1200px 600px at 78% -10%, rgba(249,115,22,.55), transparent 60%),
-    radial-gradient(900px 500px at 10% 110%, rgba(214,31,43,.5), transparent 55%),
-    linear-gradient(160deg, #2a1109 0%, #1a0e0a 60%, #120907 100%);
+    radial-gradient(1200px 600px at 78% -10%, rgba(255,138,61,.55), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(216,27,104,.5), transparent 55%),
+    linear-gradient(160deg, #241531 0%, #122021 60%, #0a1414 100%);
 }
 .hero.lake-theme {
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(43,176,201,.5), transparent 60%),
-    radial-gradient(900px 500px at 8% 110%, rgba(182,224,42,.4), transparent 55%),
-    linear-gradient(160deg, #0e2a2f 0%, #122b1e 60%, #0c1a14 100%);
+    radial-gradient(1200px 600px at 80% -10%, rgba(0,191,194,.5), transparent 60%),
+    radial-gradient(900px 500px at 8% 110%, rgba(143,209,79,.4), transparent 55%),
+    linear-gradient(160deg, #0d2b2c 0%, #102321 60%, #0a1413 100%);
 }
 .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: center; padding-block: clamp(54px, 9vw, 120px); position: relative; z-index: 2; }
-.eyebrow { display: inline-flex; align-items: center; gap: .5em; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; font-size: .72rem; color: var(--ember); background: rgba(255,180,59,.1); border: 1px solid rgba(255,180,59,.35); padding: .45em .9em; border-radius: 999px; }
+.eyebrow { display: inline-flex; align-items: center; gap: .5em; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; font-size: .72rem; color: var(--ember); background: rgba(255,194,60,.12); border: 1px solid rgba(255,194,60,.4); padding: .45em .9em; border-radius: 999px; }
 .hero h1 { font-size: clamp(2.7rem, 7vw, 5.4rem); margin: 1rem 0 .4rem; text-transform: uppercase; }
 .hero h1 .pop { color: var(--ember); }
 .hero h1 .lake { color: var(--lake); }
@@ -130,6 +132,11 @@ header.nav {
 .marquee-track { display: inline-block; animation: marquee 22s linear infinite; }
 .marquee-track span { padding: 0 1.4rem; }
 @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+/* ---------- Papel picado bunting (decorative, site-wide) ---------- */
+.papel-picado { display: flex; flex-wrap: nowrap; background: var(--char); padding-top: 8px; overflow: hidden; border-bottom: 2px dashed rgba(255,248,231,.3); position: relative; z-index: 40; }
+.papel-picado .pennant { flex: 0 0 30px; height: 24px; margin: 0 3px; clip-path: polygon(0 0, 100% 0, 50% 100%); position: relative; }
+.papel-picado .pennant::after { content: ""; position: absolute; top: 6px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: rgba(255,255,255,.35); }
 
 /* ---------- Story strip ---------- */
 .story { background: var(--char); color: var(--cream); }
@@ -158,9 +165,9 @@ header.nav {
 }
 .card:hover { transform: translateY(-6px) rotate(-.6deg); box-shadow: var(--shadow); }
 .card .label-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
-.tagchip { font-size: .68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pepper-dk); background: rgba(214,31,43,.1); border: 1px solid rgba(214,31,43,.3); padding: .25em .6em; border-radius: 6px; }
-.tagchip.lake { color: #1c7b8e; background: rgba(43,176,201,.12); border-color: rgba(43,176,201,.35); }
-.scoville { font-size: .68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pepper-dk); background: rgba(214,31,43,.1); border: 1px solid rgba(214,31,43,.3); padding: .25em .6em; border-radius: 6px; }
+.tagchip { font-size: .68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pepper-dk); background: rgba(216,27,104,.1); border: 1px solid rgba(216,27,104,.3); padding: .25em .6em; border-radius: 6px; }
+.tagchip.lake { color: #00838a; background: rgba(0,191,194,.12); border-color: rgba(0,191,194,.35); }
+.scoville { font-size: .68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pepper-dk); background: rgba(216,27,104,.1); border: 1px solid rgba(216,27,104,.3); padding: .25em .6em; border-radius: 6px; }
 .bottle-mini { width: 40px; flex: none; }
 .card h3 { font-size: 1.5rem; text-transform: uppercase; color: var(--char); margin: .8rem 0 .35rem; }
 .card .slogan { font-style: italic; color: #6a574a; font-size: .96rem; }
@@ -204,12 +211,12 @@ header.nav {
 @media (max-width: 460px) { .steps { grid-template-columns: 1fr; } }
 
 /* ---------- Heat index (dark) ---------- */
-.heatindex { background: linear-gradient(160deg, var(--char) 0%, #2a1109 100%); color: var(--cream); }
+.heatindex { background: linear-gradient(160deg, var(--char) 0%, #241531 100%); color: var(--cream); }
 .heatindex .head h2, .heatindex .head p { color: var(--cream); }
 .heatindex .head p { color: #d8c4ab; }
 .scale { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: .7rem; }
 .scale-row { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 1rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: .8rem 1.1rem; transition: background .2s, transform .2s; }
-.scale-row:hover { background: rgba(249,115,22,.12); transform: translateX(6px); }
+.scale-row:hover { background: rgba(255,138,61,.12); transform: translateX(6px); }
 .scale-row .num { font-family: var(--font-display); font-size: 2rem; color: var(--ember); text-align: center; }
 .scale-row .desc b { display: block; font-size: 1.05rem; }
 .scale-row .desc span { color: #d8c4ab; font-size: .92rem; }
@@ -275,7 +282,7 @@ header.nav {
 .line-item .li-price { font-weight: 700; color: var(--char); text-align: right; white-space: nowrap; }
 .qty { display: inline-flex; align-items: center; border: 1.5px solid #e3d2b3; border-radius: 999px; overflow: hidden; background: var(--cream-2); }
 .qty button { width: 32px; height: 32px; border: 0; background: transparent; font-size: 1.1rem; font-weight: 800; cursor: pointer; color: var(--char); }
-.qty button:hover { background: rgba(214,31,43,.12); }
+.qty button:hover { background: rgba(216,27,104,.12); }
 .qty span { min-width: 2ch; text-align: center; font-weight: 700; }
 .li-remove { background: none; border: 0; color: var(--pepper); font-size: .8rem; font-weight: 700; cursor: pointer; padding: 0; }
 .li-remove:hover { text-decoration: underline; }
