@@ -36,6 +36,7 @@
  *   column.
  */
 function doPost(e) {
+  var p = parsePayload_(e);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName("Orders");
   if (!sheet) {
@@ -50,7 +51,6 @@ function doPost(e) {
     sheet.setFrozenRows(1);
   }
 
-  var p = e.parameter;
   sheet.appendRow([
     p.timestamp || new Date().toLocaleString(),
     p.order_number || "",
@@ -69,4 +69,15 @@ function doPost(e) {
   return ContentService
     .createTextOutput(JSON.stringify({ result: "success" }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function parsePayload_(e) {
+  if (e && e.postData && e.postData.contents) {
+    try {
+      return JSON.parse(e.postData.contents);
+    } catch (err) {
+      // Fall back to form fields for older storefront versions.
+    }
+  }
+  return (e && e.parameter) || {};
 }
