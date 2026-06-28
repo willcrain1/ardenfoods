@@ -14,8 +14,8 @@
     // TODO: create a free form at https://formspree.io and paste its id (e.g. "xeqyabcd").
     // Until set, checkout falls back to opening a pre-filled email instead.
     FORMSPREE_ID: "",
-    // TODO: your Zelle handle (the phone # or email your Zelle is registered to).
-    ZELLE_HANDLE: "your-zelle@example.com",
+    // Zelle handle (the email your Zelle is registered to).
+    ZELLE_HANDLE: "Crump1787@gmail.com",
     // TODO: fallback contact email (used if Formspree isn't set yet).
     CONTACT_EMAIL: "hello@example.com",
     BRAND: "Arden Foods Co."
