@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2a1109"/><stop offset="1" stop-color="#120907"/>
+      <stop offset="0" stop-color="#241531"/><stop offset="1" stop-color="#0b1414"/>
     </linearGradient>
     <radialGradient id="glow" cx="78%" cy="10%" r="60%">
-      <stop offset="0" stop-color="#f97316" stop-opacity=".55"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ff8a3d" stop-opacity=".55"/><stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <text x="80" y="150" fill="#ffb43b" font-size="28" font-weight="800" letter-spacing="4">🌶️ ARDEN HOT SAUCE CO. · LOXAHATCHEE, FL</text>
-  <text x="76" y="290" fill="#fbf3e4" font-size="120" font-weight="900" letter-spacing="-1">Locally sourced</text>
-  <text x="76" y="410" fill="#ffb43b" font-size="120" font-weight="900" letter-spacing="-1">gossip.</text>
+  <text x="80" y="150" fill="#ffc23c" font-size="28" font-weight="800" letter-spacing="4">🌶️ ARDEN HOT SAUCE CO. · LOXAHATCHEE, FL</text>
+  <text x="76" y="290" fill="#fff8e7" font-size="120" font-weight="900" letter-spacing="-1">Locally sourced</text>
+  <text x="76" y="410" fill="#ffc23c" font-size="120" font-weight="900" letter-spacing="-1">gossip.</text>
   <text x="80" y="500" fill="#f3e6cf" font-size="38" font-weight="600">Imported peppers. Grown on the Arden farm,</text>
   <text x="80" y="548" fill="#f3e6cf" font-size="38" font-weight="600">bottled by your neighbors.</text>
 
   <!-- bottle -->
   <g transform="translate(940 150)">
     <rect x="44" y="-10" width="40" height="30" rx="6" fill="#120907"/>
-    <path d="M40 20 q-22 26 -22 70 v220 a26 26 0 0 0 26 26 h40 a26 26 0 0 0 26 -26 v-220 q0 -44 -22 -70Z" fill="#d61f2b"/>
-    <rect x="12" y="120" width="100" height="150" rx="10" fill="#fbf3e4"/>
-    <text x="62" y="160" text-anchor="middle" font-size="22" font-weight="900" fill="#9c1019">ARDEN</text>
-    <text x="62" y="186" text-anchor="middle" font-size="14" font-weight="800" fill="#1a0e0a">HOT SAUCE</text>
-    <circle cx="62" cy="225" r="24" fill="#1a0e0a"/>
+    <path d="M40 20 q-22 26 -22 70 v220 a26 26 0 0 0 26 26 h40 a26 26 0 0 0 26 -26 v-220 q0 -44 -22 -70Z" fill="#e8432b"/>
+    <rect x="12" y="120" width="100" height="150" rx="10" fill="#fff8e7"/>
+    <text x="62" y="160" text-anchor="middle" font-size="22" font-weight="900" fill="#a10f4e">ARDEN</text>
+    <text x="62" y="186" text-anchor="middle" font-size="14" font-weight="800" fill="#122021">HOT SAUCE</text>
+    <circle cx="62" cy="225" r="24" fill="#122021"/>
     <text x="62" y="234" text-anchor="middle" font-size="26">🌶️</text>
   </g>
 </svg>
