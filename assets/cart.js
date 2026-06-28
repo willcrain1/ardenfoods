@@ -11,13 +11,15 @@
 
   /* ====== CONFIG — fill these in ====== */
   var CONFIG = {
-    // TODO: create a free form at https://formspree.io and paste its id (e.g. "xeqyabcd").
-    // Until set, checkout falls back to opening a pre-filled email instead.
-    FORMSPREE_ID: "",
+    // TODO: paste your Google Apps Script Web App URL here (see
+    // google-sheets-webhook.gs + README for setup). Every order becomes
+    // a row in your Google Sheet. Until set, checkout falls back to
+    // opening a pre-filled email instead.
+    SHEET_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbydfiDQzq9PSxyNrLn3hBRQHI6VSvHLF5OernjC8MXK_Rd3RjrVbzFSdY8nGzZwCQy8Ew/exec",
     // Zelle handle (the email your Zelle is registered to).
     ZELLE_HANDLE: "Crump1787@gmail.com",
-    // TODO: fallback contact email (used if Formspree isn't set yet).
-    CONTACT_EMAIL: "hello@example.com",
+    // TODO: fallback contact email (used if the Sheet webhook isn't set yet).
+    CONTACT_EMAIL: "Crump1787@gmail.com",
     BRAND: "Arden Foods Co."
   };
 
@@ -108,35 +110,37 @@
   }
 
   /* ---------- submit ---------- */
-  // returns a Promise that resolves to {ok:true, via:'formspree'|'mailto'}
+  // returns a Promise that resolves to {ok:true, via:'sheet'|'mailto'}
   function submitOrder(order) {
-    var payload = {
-      _subject: "🌶️ New Arden order " + order.number + " — " + money(order.total),
-      order_number: order.number,
-      total: money(order.total),
-      customer_name: order.name,
-      customer_phone: order.phone,
-      customer_email: order.email || "(none)",
-      delivery: order.delivery,
-      address_notes: order.address || "(none)",
-      order_notes: order.notes || "(none)",
-      items: order.items.map(function (i) { return i.qty + "x " + i.name + " (" + i.variant + ") " + money(i.price * i.qty); }).join("\n"),
-      ready_to_text: "Hi " + order.name.split(" ")[0] + ", your Arden order " + order.number + " is confirmed! 🌶️",
-      summary: orderText(order)
-    };
+    var itemsText = order.items.map(function (i) {
+      return i.qty + "x " + i.name + " (" + i.variant + ") " + money(i.price * i.qty);
+    }).join("; ");
+    var readyToText = "Hi " + order.name.split(" ")[0] + ", your Arden order " + order.number + " is confirmed! 🌶️ We'll be in touch on delivery.";
 
-    if (CONFIG.FORMSPREE_ID) {
-      return fetch("https://formspree.io/f/" + CONFIG.FORMSPREE_ID, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(payload)
-      }).then(function (res) {
-        if (res.ok) return { ok: true, via: "formspree" };
-        throw new Error("Formspree responded " + res.status);
-      });
+    if (CONFIG.SHEET_WEBHOOK_URL) {
+      var fd = new FormData();
+      fd.append("timestamp", new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+      fd.append("order_number", order.number);
+      fd.append("status", "Pending payment");
+      fd.append("total", money(order.total));
+      fd.append("customer_name", order.name);
+      fd.append("customer_phone", order.phone);
+      fd.append("customer_email", order.email || "");
+      fd.append("delivery", order.delivery);
+      fd.append("address", order.address || "");
+      fd.append("notes", order.notes || "");
+      fd.append("items", itemsText);
+      fd.append("ready_to_text", readyToText);
+
+      // Apps Script web apps don't send CORS headers back, so the
+      // response can't be read from here ("no-cors"). The request still
+      // reaches the script and the row still gets appended — we just
+      // can't confirm success beyond the network call completing.
+      return fetch(CONFIG.SHEET_WEBHOOK_URL, { method: "POST", mode: "no-cors", body: fd })
+        .then(function () { return { ok: true, via: "sheet" }; });
     }
 
-    // Fallback: no Formspree configured yet -> open a pre-filled email so the order isn't lost.
+    // Fallback: no Sheet webhook configured yet -> open a pre-filled email so the order isn't lost.
     return Promise.resolve().then(function () {
       var subject = encodeURIComponent("Arden order " + order.number);
       var body = encodeURIComponent(orderText(order));
