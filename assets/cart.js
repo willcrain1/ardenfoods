@@ -2,9 +2,9 @@
    Arden Foods Co. — cart + ordering engine
    ------------------------------------------------------------
    Pure client-side. Cart lives in localStorage. On checkout we
-   generate an order number, POST the order to Formspree (which
-   emails you), then show Zelle payment instructions. Payment is
-   out-of-band; the order number ties the Zelle memo to the email.
+   generate an order number, POST the order to the Google Sheets
+   webhook, then show Zelle payment instructions. Payment is out-of-band;
+   the order number ties the Zelle memo to the Sheet row.
    ============================================================ */
 (function () {
   "use strict";
