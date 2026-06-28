@@ -55,21 +55,18 @@
             <div class="err">Enter a valid mobile number (at least 10 digits).</div>
           </div>
           <div class="field" id="f-email">
-            <label for="email">Email <span style="font-weight:500;color:#8a7868">(optional)</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" />
-            <div class="err">That email doesn't look right.</div>
+            <label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <div class="err">Enter a valid email address.</div>
           </div>
           <div class="field">
-            <label>How would you like to get it? <span class="req">*</span></label>
-            <div class="radios">
-              <label class="radio"><input type="radio" name="delivery" value="Mailbox handoff" checked /><span><b>Mailbox handoff</b><span>Meet at the community mailboxes (don't park there).</span></span></label>
-              <label class="radio"><input type="radio" name="delivery" value="Porch dropoff" /><span><b>Porch dropoff</b><span>Leave it at my door — add address below.</span></span></label>
-              <label class="radio"><input type="radio" name="delivery" value="Meet up" /><span><b>Meet up</b><span>We'll coordinate a spot (the lake, the farm stand, etc.).</span></span></label>
-            </div>
+            <label>How would you like to get it?</label>
+            <div class="radio" style="cursor:default"><span><b>🏠 Porch dropoff</b><span>We'll leave it at your door — add your address below.</span></span></div>
           </div>
           <div class="field" id="f-addr">
-            <label for="address">Address / drop-off notes</label>
-            <input id="address" name="address" type="text" placeholder="Street address, gate code, or where to meet" />
+            <label for="address">Delivery address <span class="req">*</span></label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street address, gate code, or porch notes" required />
+            <div class="err">Please add your delivery address.</div>
           </div>
           <div class="field">
             <label for="notes">Order notes <span style="font-weight:500;color:#8a7868">(optional)</span></label>
@@ -184,11 +181,13 @@
     var name = document.getElementById("name").value.trim();
     var phone = document.getElementById("phone").value.trim();
     var email = document.getElementById("email").value.trim();
+    var address = document.getElementById("address").value.trim();
     var digits = phone.replace(/\D/g, "");
     setInvalid("f-name", !name); if (!name) ok = false;
     setInvalid("f-phone", digits.length < 10); if (digits.length < 10) ok = false;
-    var emailBad = email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    var emailBad = !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
     setInvalid("f-email", emailBad); if (emailBad) ok = false;
+    setInvalid("f-addr", !address); if (!address) ok = false;
     return ok;
   }
 
@@ -203,7 +202,6 @@
     var btn = this;
     btn.disabled = true; btn.textContent = "Placing order…";
 
-    var deliveryEl = document.querySelector('input[name="delivery"]:checked');
     var order = {
       number: A.orderNumber(),
       items: A.getCart(),
@@ -211,7 +209,7 @@
       name: document.getElementById("name").value.trim(),
       phone: document.getElementById("phone").value.trim(),
       email: document.getElementById("email").value.trim(),
-      delivery: deliveryEl ? deliveryEl.value : "Mailbox handoff",
+      delivery: "Porch dropoff",
       address: document.getElementById("address").value.trim(),
       notes: document.getElementById("notes").value.trim()
     };
