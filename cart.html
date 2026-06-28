@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Cart & Checkout | Arden Foods Co.</title>
+<meta name="description" content="Review your Arden Foods Co. order, place it to get an order number, and pay by Zelle. We'll text you when it's confirmed." />
+<meta name="theme-color" content="#1a0e0a" />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-page="cart">
+
+<section class="cart-page section">
+  <div class="wrap">
+    <div class="head reveal" style="margin-bottom:2rem">
+      <div class="kicker">Checkout</div>
+      <h2>Your Arden order</h2>
+      <p>Sold neighbor-to-neighbor. Place your order, pay by Zelle, get a text when it's confirmed.</p>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div id="empty" class="panel empty-cart" hidden>
+      <div class="big">Your cart is emptier than the 2nd clubhouse.</div>
+      <p>Add a few neighborhood essentials and come back.</p>
+      <div class="hero-cta" style="justify-content:center;margin-top:1.2rem">
+        <a href="index.html" class="btn btn-primary">Shop the lineup</a>
+        <a href="hotsauce.html" class="btn btn-dark">🌶️ Start with hot sauce</a>
+      </div>
+    </div>
+
+    <!-- CHECKOUT STATE -->
+    <div id="checkout" class="cart-layout" hidden>
+      <div>
+        <div class="panel" style="margin-bottom:1.5rem">
+          <h2>Your cart</h2>
+          <div id="items"></div>
+        </div>
+
+        <form class="panel" id="orderForm" novalidate>
+          <h2>Your details</h2>
+          <div class="field" id="f-name">
+            <label for="name">Name <span class="req">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <div class="err">Please tell us your name.</div>
+          </div>
+          <div class="field" id="f-phone">
+            <label for="phone">Mobile phone <span class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+            <div class="hint">This is the number we'll text once your Zelle payment lands.</div>
+            <div class="err">Enter a valid mobile number (at least 10 digits).</div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="email">Email <span style="font-weight:500;color:#8a7868">(optional)</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+            <div class="err">That email doesn't look right.</div>
+          </div>
+          <div class="field">
+            <label>How would you like to get it? <span class="req">*</span></label>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="delivery" value="Mailbox handoff" checked /><span><b>Mailbox handoff</b><span>Meet at the community mailboxes (don't park there).</span></span></label>
+              <label class="radio"><input type="radio" name="delivery" value="Porch dropoff" /><span><b>Porch dropoff</b><span>Leave it at my door — add address below.</span></span></label>
+              <label class="radio"><input type="radio" name="delivery" value="Meet up" /><span><b>Meet up</b><span>We'll coordinate a spot (the lake, the farm stand, etc.).</span></span></label>
+            </div>
+          </div>
+          <div class="field" id="f-addr">
+            <label for="address">Address / drop-off notes</label>
+            <input id="address" name="address" type="text" placeholder="Street address, gate code, or where to meet" />
+          </div>
+          <div class="field">
+            <label for="notes">Order notes <span style="font-weight:500;color:#8a7868">(optional)</span></label>
+            <textarea id="notes" name="notes" placeholder="Allergies, a preferred pickup day, custom requests…"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <aside>
+        <div class="panel summary" style="position:sticky;top:84px">
+          <h2>Summary</h2>
+          <div id="sumRows"></div>
+          <div class="row total"><span>Total</span><span id="sumTotal">$0</span></div>
+          <button class="btn btn-primary" id="placeBtn" style="width:100%;margin-top:1.2rem">Place order →</button>
+          <p class="hint" style="text-align:center;margin-top:.8rem">No payment is taken here. You'll get an order number, then pay by <b>Zelle</b>.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- CONFIRMATION STATE -->
+    <div id="confirm" class="panel confirm" hidden style="max-width:640px;margin:0 auto">
+      <div class="check" aria-hidden="true">✓</div>
+      <h2 style="text-transform:uppercase">Order placed!</h2>
+      <p style="color:#6a574a">Here's your order number — you'll need it for the Zelle memo:</p>
+      <div class="order-num" id="confNum">ARD-000000-XXXX</div>
+
+      <div class="zelle-box">
+        <h3>💸 Pay by Zelle to finish</h3>
+        <ol>
+          <li>Open your bank's <b>Zelle</b> and send <span class="zelle-amount" id="confTotal">$0</span>
+            <button class="copybtn" data-copy="total">copy amount</button></li>
+          <li>Send to: <b id="confZelle">your-zelle@example.com</b>
+            <button class="copybtn" data-copy="zelle">copy</button></li>
+          <li>Put your order number in the <b>memo / note</b>: <b id="confNum2">ARD-…</b>
+            <button class="copybtn" data-copy="num">copy</button></li>
+        </ol>
+      </div>
+
+      <p style="color:#6a574a">📲 As soon as we see your payment, we'll <b>text you</b> at the number you gave us to confirm. Batches are small and the gossip is fast — thanks, neighbor!</p>
+
+      <div id="confWarn" hidden style="background:#fff4f1;border:1.5px solid var(--pepper);border-radius:12px;padding:.9rem 1rem;margin:1rem 0;color:var(--pepper-dk);font-size:.9rem">
+        Heads up: we couldn't auto-send your order to us. Please <a id="confMailto" href="#" style="font-weight:800;color:var(--pepper-dk)">tap here to email it</a> so we don't miss it.
+      </div>
+
+      <div class="hero-cta" style="justify-content:center;margin-top:1.4rem">
+        <a href="index.html" class="btn btn-dark">Back to the shop</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="assets/catalog.js"></script>
+<script src="assets/cart.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.Arden;
+  var elEmpty = document.getElementById("empty");
+  var elCheckout = document.getElementById("checkout");
+  var elConfirm = document.getElementById("confirm");
+  var elItems = document.getElementById("items");
+  var elSumRows = document.getElementById("sumRows");
+  var elSumTotal = document.getElementById("sumTotal");
+  var lastOrder = null;
+
+  function money(n) { return A.money(n); }
+
+  function render() {
+    var cart = A.getCart();
+    if (!cart.length && elConfirm.hidden) {
+      elEmpty.hidden = false; elCheckout.hidden = true; return;
+    }
+    if (!cart.length) return; // confirmation showing
+    elEmpty.hidden = true; elCheckout.hidden = false;
+
+    elItems.innerHTML = cart.map(function (i) {
+      return '<div class="line-item">' +
+        '<div><div class="li-name">' + i.name + '</div>' +
+          '<div class="li-variant">' + i.variant + (i.line ? " · " + i.line : "") + '</div>' +
+          '<button class="li-remove" data-remove="' + i.id + '">Remove</button></div>' +
+        '<div style="text-align:right">' +
+          '<div class="qty"><button data-dec="' + i.id + '" aria-label="Decrease">−</button>' +
+            '<span>' + i.qty + '</span>' +
+            '<button data-inc="' + i.id + '" aria-label="Increase">+</button></div>' +
+          '<div class="li-price">' + money(i.price * i.qty) + '</div></div>' +
+      '</div>';
+    }).join("");
+
+    elSumRows.innerHTML = cart.map(function (i) {
+      return '<div class="row"><span>' + i.qty + '× ' + i.name + '</span><span>' + money(i.price * i.qty) + '</span></div>';
+    }).join("");
+    elSumTotal.textContent = money(A.total());
+  }
+
+  // qty / remove (delegation)
+  document.addEventListener("click", function (e) {
+    var inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]"), rm = e.target.closest("[data-remove]");
+    if (inc) { var id = inc.getAttribute("data-inc"); A.setQty(id, getQty(id) + 1); render(); }
+    if (dec) { var id2 = dec.getAttribute("data-dec"); A.setQty(id2, getQty(id2) - 1); render(); }
+    if (rm) { A.removeItem(rm.getAttribute("data-remove")); render(); }
+  });
+  function getQty(id) { var f = A.getCart().filter(function (i){ return i.id === id; })[0]; return f ? f.qty : 0; }
+
+  /* ---------- validation ---------- */
+  function setInvalid(fieldId, bad) {
+    document.getElementById(fieldId).classList.toggle("invalid", bad);
+  }
+  function validate() {
+    var ok = true;
+    var name = document.getElementById("name").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var digits = phone.replace(/\D/g, "");
+    setInvalid("f-name", !name); if (!name) ok = false;
+    setInvalid("f-phone", digits.length < 10); if (digits.length < 10) ok = false;
+    var emailBad = email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    setInvalid("f-email", emailBad); if (emailBad) ok = false;
+    return ok;
+  }
+
+  /* ---------- place order ---------- */
+  document.getElementById("placeBtn").addEventListener("click", function () {
+    if (!A.getCart().length) return;
+    if (!validate()) {
+      var bad = document.querySelector(".field.invalid");
+      if (bad) bad.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    var btn = this;
+    btn.disabled = true; btn.textContent = "Placing order…";
+
+    var deliveryEl = document.querySelector('input[name="delivery"]:checked');
+    var order = {
+      number: A.orderNumber(),
+      items: A.getCart(),
+      total: A.total(),
+      name: document.getElementById("name").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      delivery: deliveryEl ? deliveryEl.value : "Mailbox handoff",
+      address: document.getElementById("address").value.trim(),
+      notes: document.getElementById("notes").value.trim()
+    };
+    lastOrder = order;
+
+    A.submitOrder(order).then(function () {
+      showConfirm(order, false);
+    }).catch(function () {
+      showConfirm(order, true);
+    });
+  });
+
+  function showConfirm(order, failed) {
+    document.getElementById("confNum").textContent = order.number;
+    document.getElementById("confNum2").textContent = order.number;
+    document.getElementById("confTotal").textContent = money(order.total);
+    document.getElementById("confZelle").textContent = A.config.ZELLE_HANDLE;
+    if (failed) {
+      var warn = document.getElementById("confWarn");
+      warn.hidden = false;
+      var subject = encodeURIComponent("Arden order " + order.number);
+      var body = encodeURIComponent(A.orderText(order));
+      document.getElementById("confMailto").href = "mailto:" + A.config.CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
+    }
+    A.clear();
+    elEmpty.hidden = true; elCheckout.hidden = true; elConfirm.hidden = false;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  /* ---------- copy buttons ---------- */
+  document.addEventListener("click", function (e) {
+    var c = e.target.closest("[data-copy]"); if (!c || !lastOrder) return;
+    var what = c.getAttribute("data-copy");
+    var val = what === "total" ? money(lastOrder.total) : what === "zelle" ? A.config.ZELLE_HANDLE : lastOrder.number;
+    var done = function () { var t = c.textContent; c.textContent = "copied ✓"; setTimeout(function(){ c.textContent = t; }, 1400); };
+    if (navigator.clipboard) navigator.clipboard.writeText(val).then(done, done); else done();
+  });
+
+  document.addEventListener("arden:cart-changed", render);
+  render();
+})();
+</script>
+</body>
+</html>

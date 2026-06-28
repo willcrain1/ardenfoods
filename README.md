@@ -1,67 +1,79 @@
-# 🌶️ Arden Hot Sauce Co.
+# 🌶️ Arden Foods Co.
 
-A modern, fun, **single-page promo site** for Arden Hot Sauce Co. — a homemade, neighbor-to-neighbor hot sauce brand under **Arden Foods Co.**, based in the Arden agrihood in Loxahatchee, FL.
+A modern, fun **multi-page storefront** for Arden Foods Co. — a homemade, neighbor-to-neighbor food brand based in the Arden agrihood in Loxahatchee, FL. Hot sauce, focaccia, premium cookies, salsa, and margarita mixes, with a lightweight **order-by-Zelle** flow.
 
-> *"Locally sourced gossip. Imported peppers."*
-> Keeping Arden spicy since the amenities opened… eventually.
+> *"Keeping Arden spicy since the amenities opened… eventually."*
 
-The whole site is one self-contained `index.html` — embedded CSS + vanilla JS, **no build step, no dependencies, no framework**. It runs straight off the file system and deploys to GitHub Pages with zero config.
+Still 100% static — plain HTML, one shared CSS file, and vanilla JS. **No build step, no framework, no dependencies.** Deploys to GitHub Pages with zero config.
 
-## Files
+## Pages
 
 | File | Purpose |
 |------|---------|
-| `index.html` | The entire website (HTML, CSS, JS inline). |
-| `assets/favicon.svg` | Pepper/flame favicon. |
-| `assets/og-image.svg` | Social share preview image (Open Graph / Twitter). |
-| `.nojekyll` | Tells GitHub Pages to serve files as-is (no Jekyll processing). |
+| `index.html` | Storefront hub — brand story, the 5 product lines, "how ordering works". |
+| `hotsauce.html` | Hot sauce lineup + heat index + comment wall. |
+| `focaccia.html` | Focaccia flavors. |
+| `cookies.html` | Premium cookies. |
+| `salsa.html` | Red, tomatillo, avocado & corn salsa (with heat ratings). |
+| `margarita-mix.html` | Spicy, skinny, pineapple & mango mixes. |
+| `cart.html` | Shared cart, checkout form, and the Zelle confirmation screen. |
+
+## Shared assets
+
+| File | Purpose |
+|------|---------|
+| `assets/styles.css` | All styling for every page (design tokens, components, responsive). |
+| `assets/site.js` | Renders the shared nav + footer, mobile menu, scroll-reveal, add-to-cart wiring, cart badge. **Edit the nav/footer once here.** |
+| `assets/catalog.js` | **Single source of truth for products and prices.** |
+| `assets/cart.js` | Cart engine (localStorage), order numbers, and order submission. |
+| `assets/favicon.svg`, `assets/og-image.svg` | Favicon + social share image. |
+| `.nojekyll` | Serve files as-is on GitHub Pages. |
+
+## How the ordering system works
+
+GitHub Pages can't run a server, so the flow is intentionally simple and free:
+
+1. Customer adds items across any pages into **one shared cart** (saved in their browser).
+2. At checkout they enter name + phone, and **place the order** → the browser generates an **order number** (`ARD-YYMMDD-XXXX`).
+3. The order is emailed to you (via Formspree), and the customer sees **Zelle instructions**: send the total, put the order number in the memo.
+4. When you see the Zelle payment land, you **text the customer** the confirmation. The order email includes a ready-to-copy "confirmed" message and their phone number.
+
+There's no automated SMS and no payment API — Zelle is out-of-band by design, and the order number ties the payment to the order.
+
+## ⚙️ Before you go live — fill these in
+
+**1. Orders + Zelle (`assets/cart.js`, top of the file):**
+```js
+FORMSPREE_ID: "",                          // your Formspree form id
+ZELLE_HANDLE: "your-zelle@example.com",     // the phone/email your Zelle uses
+CONTACT_EMAIL: "hello@example.com"          // fallback email
+```
+- **Formspree:** make a free form at <https://formspree.io>, copy its id (the part after `/f/`, e.g. `xeqyabcd`), and paste it into `FORMSPREE_ID`. Free tier = 50 orders/month.
+- **Until `FORMSPREE_ID` is set**, placing an order opens a pre-filled email to `CONTACT_EMAIL` instead (so no order is ever lost).
+- Set `ZELLE_HANDLE` to whatever your Zelle is registered to — it's shown on the confirmation screen.
+
+**2. Prices (`assets/catalog.js`):** every price is a clearly-marked **placeholder**. Update them to your real prices (the cart totals read from here).
+
+**3. Carryover from v1:** the Arden Facebook group link and contact email still appear as `TODO`s if you want social/contact CTAs.
+
+## Editing products
+
+`assets/catalog.js` is the source of truth — change a name, variant label, or price there and it updates the buttons **and** the cart. Each product page has a small `items` array that controls the marketing copy (blurb, tag, heat rating) and which catalog ids appear.
 
 ## Preview locally
 
-Just **double-click `index.html`** — it renders fully with no server.
-
-Or serve it (closer to how GitHub Pages behaves):
+Double-click any `.html`, or serve the folder (closer to GitHub Pages):
 
 ```bash
 python -m http.server
-# then open http://localhost:8000
+# open http://localhost:8000
 ```
 
 ## Deploy to GitHub Pages
 
-1. Create a GitHub repo and push these files to the `main` branch:
-   ```bash
-   git add .
-   git commit -m "Arden Hot Sauce Co. single-page site"
-   git push -u origin main
-   ```
-2. In the repo: **Settings → Pages**.
-3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-4. Set branch to **`main`** and folder to **`/ (root)`**, then **Save**.
-5. Wait ~1 minute. Your site is live at `https://<your-username>.github.io/<repo-name>/`.
-
-(`index.html` is at the repo root, so no extra config is needed.)
-
-## Fill these in before sharing
-
-A few placeholders are left for you — search `index.html` for `TODO`:
-
-- **Arden Facebook group link** — the “💬 Order via the Arden group” button in the *Get Some* section (`data-link="facebook"`, currently `href="#"`). Until set, it shows a friendly reminder popup.
-- **Contact email** — the “✉️ Email us” button uses `mailto:hello@example.com`. Swap in your real address.
-- **(Optional) Product photos** — the bottles are drawn with inline SVG so the page looks finished out of the box. Replace with real photos whenever you have them.
-
-## Editing the sauces
-
-All content lives in plain JS arrays near the bottom of `index.html`:
-
-- `sauces` — the featured cards (name, slogan, heat level, label text).
-- `vault` — the “full vault” expandable list of the rest of the names.
-- `scale` — the Arden Heat Index™ rows.
-- `posts` — the faux community-comment wall.
-
-Add, remove, or reword entries in those arrays and the page updates itself — no other code to touch.
+Already enabled for this repo (`main` / root). Just merge to `main` and it auto-redeploys in ~1 minute to <https://willcrain1.github.io/ardenfoods/>. To set it up elsewhere: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**.
 
 ---
 
 *Contains peppers, sarcasm, and community drama. Made in Arden. Complained about in Arden.*
-Sauce names are neighborhood satire — all in good fun. Not affiliated with the Arden HOA, its developer, the (still-closed) second clubhouse, the pool wristband committee, or any data center.
+Product names are neighborhood satire — all in good fun. Not affiliated with the Arden HOA, its developer, the (still-closed) second clubhouse, the pool wristband committee, or any data center.

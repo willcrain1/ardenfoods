@@ -3,330 +3,75 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Arden Hot Sauce Co. — Grown, bottled & gossiped about in Arden, FL</title>
-<meta name="description" content="Small-batch hot sauce grown on the Arden farm and bottled by your neighbors in Loxahatchee, FL. Keeping Arden spicy since the amenities opened… eventually." />
+<title>Arden Foods Co. — Premium homemade food, made by your neighbors in Arden, FL</title>
+<meta name="description" content="Arden Foods Co. — small-batch hot sauce, focaccia, premium cookies, salsa, and margarita mixes, grown and made by neighbors in the Arden agrihood, Loxahatchee, FL. Order online, pay by Zelle." />
 <meta name="theme-color" content="#1a0e0a" />
 
-<!-- Open Graph / Twitter -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="Arden Hot Sauce Co." />
-<meta property="og:title" content="Arden Hot Sauce Co. — Locally sourced gossip. Imported peppers." />
-<meta property="og:description" content="Small-batch hot sauce grown on the Arden farm and bottled by your neighbors. Heat level: White Tesla doing 45 in a 25." />
+<meta property="og:site_name" content="Arden Foods Co." />
+<meta property="og:title" content="Arden Foods Co. — The whole neighborhood, now in jars." />
+<meta property="og:description" content="Hot sauce, focaccia, cookies, salsa & margarita mixes. Made in Arden. Complained about in Arden. 🌶️" />
 <meta property="og:image" content="assets/og-image.svg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Arden Hot Sauce Co." />
-<meta name="twitter:description" content="Made in Arden. Complained about in Arden. 🌶️" />
+<meta name="twitter:title" content="Arden Foods Co." />
+<meta name="twitter:description" content="Premium homemade food, made by your neighbors in Loxahatchee, FL." />
 <meta name="twitter:image" content="assets/og-image.svg" />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
 
-<!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Arden Hot Sauce Co.",
-  "alternateName": "Arden Foods Co.",
-  "description": "Small-batch, farm-to-bottle hot sauce made by neighbors in the Arden agrihood community.",
+  "@type": "Store",
+  "name": "Arden Foods Co.",
+  "description": "Premium homemade food — hot sauce, focaccia, cookies, salsa and margarita mixes — made by neighbors in the Arden agrihood.",
   "slogan": "Keeping Arden spicy since the amenities opened… eventually.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Loxahatchee",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
+  "paymentAccepted": "Zelle",
+  "address": { "@type": "PostalAddress", "addressLocality": "Loxahatchee", "addressRegion": "FL", "addressCountry": "US" },
   "areaServed": "Arden, Loxahatchee, FL"
 }
 </script>
-
-<style>
-  :root {
-    --pepper:    #d61f2b;   /* deep pepper red */
-    --pepper-dk: #9c1019;
-    --habanero:  #f97316;   /* habanero orange */
-    --ember:     #ffb43b;   /* warm flame */
-    --char:      #1a0e0a;   /* charred near-black */
-    --char-2:    #2a1812;
-    --cream:     #fbf3e4;   /* warm paper */
-    --cream-2:   #f3e6cf;
-    --lime:      #b6e02a;   /* lime-green pop */
-    --lake:      #2bb0c9;   /* lake blue accent */
-    --ink:       #2a1812;
-
-    --maxw: 1140px;
-    --r: 18px;
-    --shadow: 0 18px 40px -18px rgba(0,0,0,.55);
-    --font-display: 'Anton', 'Arial Narrow', sans-serif;
-    --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: var(--font-body);
-    color: var(--ink);
-    background: var(--cream);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: .98; letter-spacing: .5px; margin: 0; }
-  a { color: inherit; }
-  img, svg { max-width: 100%; display: block; }
-  .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(18px, 4vw, 36px); }
-  .section { padding: clamp(56px, 8vw, 110px) 0; position: relative; }
-
-  /* paper grain */
-  body::before {
-    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .04;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  /* ---------- Buttons ---------- */
-  .btn {
-    display: inline-flex; align-items: center; gap: .5em;
-    font-weight: 800; font-size: .95rem; letter-spacing: .2px;
-    text-decoration: none; cursor: pointer; border: none;
-    padding: .85em 1.4em; border-radius: 999px;
-    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
-  }
-  .btn-primary { background: var(--pepper); color: #fff; box-shadow: 0 10px 22px -10px var(--pepper); }
-  .btn-primary:hover { background: var(--pepper-dk); transform: translateY(-2px); }
-  .btn-ghost { background: transparent; color: var(--cream); border: 2px solid rgba(255,255,255,.4); }
-  .btn-ghost:hover { border-color: var(--ember); color: var(--ember); transform: translateY(-2px); }
-  .btn-dark { background: var(--char); color: var(--cream); }
-  .btn-dark:hover { background: var(--char-2); transform: translateY(-2px); }
-  .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--lake); outline-offset: 3px; }
-
-  /* ---------- Nav ---------- */
-  header.nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(26,14,10,.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    color: var(--cream);
-  }
-  .nav-inner { display: flex; align-items: center; gap: 1rem; height: 64px; }
-  .brand { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: var(--cream); font-family: var(--font-display); font-size: 1.3rem; letter-spacing: .5px; white-space: nowrap; }
-  .brand .flame { font-size: 1.25rem; filter: drop-shadow(0 0 6px var(--habanero)); }
-  .nav-links { display: flex; gap: 1.4rem; margin-left: auto; }
-  .nav-links a { text-decoration: none; color: var(--cream); font-weight: 600; font-size: .92rem; opacity: .85; transition: color .2s, opacity .2s; }
-  .nav-links a:hover { opacity: 1; color: var(--ember); }
-  .nav .btn { margin-left: 1rem; padding: .6em 1.1em; font-size: .85rem; }
-  .nav-toggle { display: none; margin-left: auto; background: none; border: 0; color: var(--cream); font-size: 1.6rem; cursor: pointer; }
-
-  @media (max-width: 860px) {
-    .nav-links { position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--char); padding: .5rem 0; transform: translateY(-130%); transition: transform .25s ease; }
-    .nav-links.open { transform: translateY(0); }
-    .nav-links a { padding: .9rem 1.4rem; border-top: 1px solid rgba(255,255,255,.06); }
-    .nav-toggle { display: block; }
-    .nav .btn-desktop { display: none; }
-  }
-
-  /* ---------- Hero ---------- */
-  .hero {
-    position: relative; color: var(--cream); overflow: hidden;
-    background:
-      radial-gradient(1200px 600px at 78% -10%, rgba(249,115,22,.55), transparent 60%),
-      radial-gradient(900px 500px at 10% 110%, rgba(214,31,43,.5), transparent 55%),
-      linear-gradient(160deg, #2a1109 0%, #1a0e0a 60%, #120907 100%);
-  }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: center; padding-block: clamp(54px, 9vw, 120px); position: relative; z-index: 2; }
-  .eyebrow { display: inline-flex; align-items: center; gap: .5em; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; font-size: .72rem; color: var(--ember); background: rgba(255,180,59,.1); border: 1px solid rgba(255,180,59,.35); padding: .45em .9em; border-radius: 999px; }
-  .hero h1 { font-size: clamp(2.9rem, 7.5vw, 5.6rem); margin: 1rem 0 .4rem; text-transform: uppercase; }
-  .hero h1 .pop { color: var(--ember); }
-  .hero .tag { font-size: clamp(1.05rem, 2.4vw, 1.4rem); max-width: 30ch; color: #f7e9d4; font-weight: 500; }
-  .hero .trust { margin-top: 1.4rem; font-size: .92rem; color: #d8c4ab; display: flex; flex-wrap: wrap; gap: .3rem .9rem; }
-  .hero .trust b { color: var(--lime); }
-  .hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
-
-  /* floating bottle */
-  .bottle-art { position: relative; justify-self: center; filter: drop-shadow(0 30px 40px rgba(0,0,0,.5)); animation: float 6s ease-in-out infinite; }
-  @keyframes float { 0%,100% { transform: translateY(-8px) rotate(-3deg);} 50% { transform: translateY(10px) rotate(-3deg);} }
-  .marquee-strip { background: var(--lime); color: var(--char); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: .82rem; padding: .65rem 0; overflow: hidden; white-space: nowrap; position: relative; z-index: 3; }
-  .marquee-track { display: inline-block; animation: marquee 22s linear infinite; }
-  .marquee-track span { padding: 0 1.4rem; }
-  @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
-
-  @media (max-width: 800px) {
-    .hero .wrap { grid-template-columns: 1fr; text-align: center; }
-    .hero .tag { margin-inline: auto; }
-    .hero .trust, .hero-cta { justify-content: center; }
-    .bottle-art { max-width: 230px; order: -1; }
-    .eyebrow { margin-inline: auto; }
-  }
-
-  /* ---------- Story strip ---------- */
-  .story { background: var(--char); color: var(--cream); }
-  .story .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
-  .story h2 { grid-column: 1 / -1; font-size: clamp(1.8rem, 4vw, 3rem); text-transform: uppercase; color: var(--cream); margin-bottom: .4rem; }
-  .story h2 .lake { color: var(--lake); }
-  .stat { background: var(--char-2); border: 1px solid rgba(255,255,255,.06); border-radius: var(--r); padding: 1.5rem; }
-  .stat .big { font-family: var(--font-display); font-size: 2.4rem; color: var(--ember); }
-  .stat p { margin: .3rem 0 0; color: #d8c4ab; font-size: .95rem; }
-
-  /* ---------- Section headers ---------- */
-  .head { text-align: center; max-width: 40ch; margin: 0 auto clamp(34px, 5vw, 56px); }
-  .head .kicker { color: var(--pepper); font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; font-size: .78rem; }
-  .head h2 { font-size: clamp(2.1rem, 5.5vw, 3.6rem); text-transform: uppercase; margin: .4rem 0; }
-  .head p { color: #6a574a; font-size: 1.05rem; }
-
-  /* ---------- Lineup cards ---------- */
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.4rem; }
-  .card {
-    background: var(--cream-2); border: 1.5px solid #e3d2b3; border-radius: var(--r);
-    padding: 1.4rem; position: relative; overflow: hidden;
-    box-shadow: 0 10px 24px -16px rgba(0,0,0,.4);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .card:hover { transform: translateY(-6px) rotate(-.6deg); box-shadow: var(--shadow); }
-  .card .label-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
-  .scoville { font-size: .68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pepper-dk); background: rgba(214,31,43,.1); border: 1px solid rgba(214,31,43,.3); padding: .25em .6em; border-radius: 6px; }
-  .bottle-mini { width: 40px; flex: none; }
-  .card h3 { font-size: 1.5rem; text-transform: uppercase; color: var(--char); margin: .8rem 0 .35rem; }
-  .card .slogan { font-style: italic; color: #6a574a; font-size: .96rem; min-height: 2.8em; }
-  .heat { display: flex; gap: 4px; margin-top: .9rem; align-items: center; }
-  .heat .flame { font-size: 1.05rem; filter: grayscale(1) opacity(.3); transition: filter .4s ease, transform .4s ease; }
-  .card.revealed .heat .flame.on { filter: none; transform: scale(1.12); }
-  .heat .lvl { margin-left: auto; font-size: .72rem; font-weight: 700; color: var(--pepper-dk); text-transform: uppercase; letter-spacing: .5px; }
-  .card.flag::after { content: "★ FLAGSHIP"; position: absolute; top: 14px; right: -34px; transform: rotate(45deg); background: var(--pepper); color: #fff; font-size: .6rem; font-weight: 800; letter-spacing: 1px; padding: .25em 3em; }
-
-  /* vault */
-  .vault-wrap { text-align: center; margin-top: 2rem; }
-  .vault { max-height: 0; overflow: hidden; transition: max-height .5s ease; }
-  .vault.open { max-height: 1400px; }
-  .vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .7rem; margin-top: 1.6rem; text-align: left; }
-  .vault-item { background: var(--cream-2); border: 1px solid #e3d2b3; border-radius: 12px; padding: .8rem 1rem; }
-  .vault-item b { display: block; font-size: .95rem; color: var(--char); }
-  .vault-item span { font-size: .82rem; font-style: italic; color: #6a574a; }
-
-  /* ---------- Heat index ---------- */
-  .heatindex { background: linear-gradient(160deg, var(--char) 0%, #2a1109 100%); color: var(--cream); }
-  .heatindex .head h2, .heatindex .head p { color: var(--cream); }
-  .heatindex .head p { color: #d8c4ab; }
-  .scale { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: .7rem; }
-  .scale-row { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 1rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: .8rem 1.1rem; cursor: default; transition: background .2s, transform .2s; }
-  .scale-row:hover { background: rgba(249,115,22,.12); transform: translateX(6px); }
-  .scale-row .num { font-family: var(--font-display); font-size: 2rem; color: var(--ember); text-align: center; }
-  .scale-row .desc b { display: block; font-size: 1.05rem; }
-  .scale-row .desc span { color: #d8c4ab; font-size: .92rem; }
-  .meter { height: 10px; border-radius: 999px; background: rgba(255,255,255,.1); margin-top: .5rem; overflow: hidden; }
-  .meter i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--ember), var(--pepper)); transition: width 1.1s cubic-bezier(.2,.8,.2,1); }
-  .heatindex.revealed .meter i { width: var(--w); }
-
-  /* ---------- Farm & Lake ---------- */
-  .farm .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-  .farm-art { border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); border: 6px solid #fff; }
-  .farm h2 { font-size: clamp(2rem, 5vw, 3.4rem); text-transform: uppercase; }
-  .farm h2 .lake { color: var(--lake); }
-  .farm p { color: #5a463a; font-size: 1.05rem; }
-  .farm ul { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: .7rem; }
-  .farm li { display: flex; gap: .7rem; align-items: flex-start; font-weight: 500; }
-  .farm li .chk { color: var(--lime); font-weight: 800; flex: none; background: var(--char); width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; }
-  @media (max-width: 780px) { .farm .wrap { grid-template-columns: 1fr; } }
-
-  /* ---------- Comment wall ---------- */
-  .comments { background: var(--cream-2); }
-  .wall { columns: 3 280px; column-gap: 1.2rem; }
-  .post { break-inside: avoid; background: #fff; border: 1px solid #e9dcc4; border-radius: 14px; padding: 1.1rem 1.2rem; margin-bottom: 1.2rem; box-shadow: 0 6px 16px -12px rgba(0,0,0,.4); }
-  .post .who { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
-  .post .av { width: 36px; height: 36px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; font-weight: 800; font-size: .95rem; }
-  .post .who b { font-size: .92rem; }
-  .post .who span { font-size: .74rem; color: #998; display: block; font-weight: 500; }
-  .post p { margin: 0; font-size: .96rem; color: #3a2c22; }
-  .post .meta { margin-top: .7rem; font-size: .76rem; color: #b09; color: #a08; opacity: .7; display: flex; gap: .9rem; }
-  .post .meta span { color: #998877; }
-
-  /* ---------- Get Some CTA ---------- */
-  .getsome { background: var(--pepper); color: #fff; text-align: center; }
-  .getsome h2 { font-size: clamp(2.2rem, 6vw, 4rem); text-transform: uppercase; }
-  .getsome p { max-width: 46ch; margin: 1rem auto 0; font-size: 1.1rem; color: #ffe6df; }
-  .getsome .hero-cta { justify-content: center; margin-top: 2rem; }
-  .getsome .note { margin-top: 1.6rem; font-size: .82rem; color: #ffd8cf; opacity: .85; }
-
-  /* ---------- Footer ---------- */
-  footer { background: var(--char); color: #cbb7a3; padding: clamp(40px, 6vw, 70px) 0 2rem; }
-  footer .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 1.8rem; }
-  footer .brand { font-size: 1.5rem; }
-  .disclaimers { display: flex; flex-wrap: wrap; gap: .6rem; max-width: 560px; }
-  .disclaimers span { font-size: .76rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); padding: .4em .8em; border-radius: 999px; }
-  footer .fine { margin-top: 1.6rem; font-size: .76rem; color: #8a7868; max-width: 70ch; }
-  footer .legal { margin-top: 1rem; font-size: .76rem; color: #6f6052; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
-
-  /* ---------- reveal ---------- */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-  .reveal.revealed { opacity: 1; transform: none; }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; scroll-behavior: auto !important; }
-    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-    .heatindex .meter i { transition: none !important; }
-  }
-</style>
 </head>
-<body>
-
-<!-- ===================== NAV ===================== -->
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a href="#top" class="brand"><span class="flame" aria-hidden="true">🌶️</span> Arden Hot Sauce Co.</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navlinks">
-      <a href="#lineup">Sauces</a>
-      <a href="#heat">Heat Index</a>
-      <a href="#farm">The Farm</a>
-      <a href="#wall">Arden Life</a>
-      <a href="#get">Get Some</a>
-    </nav>
-    <a href="#get" class="btn btn-primary btn-desktop">🌶️ Order in the Arden group</a>
-  </div>
-</header>
+<body data-page="home">
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="eyebrow">🚜 Grown in the Agrihood · 🏡 Loxahatchee, FL</span>
-      <h1>Locally sourced <span class="pop">gossip.</span><br>Imported peppers.</h1>
-      <p class="tag">Small-batch hot sauce grown on the Arden farm and bottled by your neighbors. Keeping Arden spicy since the amenities opened… <em>eventually.</em></p>
+      <span class="eyebrow">🚜 The Arden Agrihood · 🏡 Loxahatchee, FL</span>
+      <h1>The whole neighborhood,<br><span class="pop">now in jars.</span></h1>
+      <p class="tag">Premium homemade food — hot sauce, focaccia, cookies, salsa &amp; margarita mixes — grown on the farm and made by your neighbors. Order online, pay by Zelle, get a text when it's confirmed.</p>
       <div class="trust">
-        <span>🌱 <b>Farm-to-bottle</b></span>
+        <span>🌱 <b>Farm-to-table</b></span>
         <span>👩‍🌾 <b>Made by neighbors</b></span>
         <span>🛶 <b>Bottled lakeside</b></span>
-        <span>🚫 <b>0% Project Tango water</b></span>
+        <span>💸 <b>Pay by Zelle</b></span>
       </div>
       <div class="hero-cta">
-        <a href="#lineup" class="btn btn-primary">See the lineup</a>
-        <a href="#get" class="btn btn-ghost">How to get some →</a>
+        <a href="#lines" class="btn btn-primary">Shop the lineup</a>
+        <a href="#how" class="btn btn-ghost">How ordering works →</a>
       </div>
     </div>
-    <div class="bottle-art" aria-hidden="true">
-      <!-- inline hero bottle -->
-      <svg width="260" height="420" viewBox="0 0 260 420" xmlns="http://www.w3.org/2000/svg">
+    <div class="hero-art" aria-hidden="true">
+      <svg width="300" height="320" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#e8341f"/><stop offset="1" stop-color="#9c1019"/>
-          </linearGradient>
-          <linearGradient id="lbl" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#fbf3e4"/><stop offset="1" stop-color="#f0ddbe"/>
-          </linearGradient>
+          <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf3e4"/><stop offset="1" stop-color="#e9d6b3"/></linearGradient>
         </defs>
-        <rect x="108" y="6" width="44" height="34" rx="6" fill="#120907"/>
-        <rect x="100" y="38" width="60" height="22" rx="5" fill="#1a0e0a"/>
-        <path d="M104 60 q-22 26 -22 70 v240 a26 26 0 0 0 26 26 h44 a26 26 0 0 0 26 -26 v-240 q0 -44 -22 -70 z" fill="url(#glass)"/>
-        <path d="M104 60 q-22 26 -22 70 v40 q40 14 96 0 v-40 q0 -44 -22 -70 z" fill="#fff" opacity=".12"/>
-        <rect x="74" y="150" width="112" height="170" rx="10" fill="url(#lbl)" stroke="#e3d2b3"/>
-        <text x="130" y="186" text-anchor="middle" font-family="Anton, sans-serif" font-size="20" fill="#9c1019">ARDEN</text>
-        <text x="130" y="210" text-anchor="middle" font-family="Anton, sans-serif" font-size="13" fill="#1a0e0a">HOT SAUCE</text>
-        <circle cx="130" cy="252" r="26" fill="#1a0e0a"/>
-        <text x="130" y="262" text-anchor="middle" font-size="26">🌶️</text>
-        <text x="130" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="8.5" fill="#6a574a">SMALL BATCH · LOXAHATCHEE</text>
+        <ellipse cx="150" cy="250" rx="140" ry="40" fill="rgba(0,0,0,.35)"/>
+        <ellipse cx="150" cy="238" rx="140" ry="44" fill="url(#plate)"/>
+        <!-- hot sauce bottle -->
+        <g transform="translate(40 70)"><rect x="14" y="-8" width="20" height="14" rx="3" fill="#120907"/><path d="M10 8 q-8 10 -8 26 v92 a10 10 0 0 0 10 10 h16 a10 10 0 0 0 10 -10 v-92 q0 -16 -8 -26Z" fill="#d61f2b"/><rect x="2" y="58" width="44" height="56" rx="6" fill="#fbf3e4"/><text x="24" y="92" text-anchor="middle" font-size="18">🌶️</text></g>
+        <!-- salsa jar -->
+        <g transform="translate(112 96)"><rect x="0" y="0" width="64" height="14" rx="4" fill="#1a0e0a"/><rect x="2" y="14" width="60" height="96" rx="10" fill="#e23b2a"/><rect x="8" y="40" width="48" height="44" rx="6" fill="#fbf3e4"/><text x="32" y="74" text-anchor="middle" font-size="22">🍅</text></g>
+        <!-- margarita -->
+        <g transform="translate(196 60)"><path d="M4 0 H72 L46 54 V96 H30 V54 Z" fill="#bfe9c2" opacity=".9"/><rect x="22" y="96" width="32" height="8" rx="3" fill="#cdb98f"/><circle cx="38" cy="26" r="9" fill="#b6e02a"/><text x="38" y="32" text-anchor="middle" font-size="14">🍋</text></g>
+        <!-- cookie + focaccia on plate -->
+        <text x="92" y="248" text-anchor="middle" font-size="40">🍪</text>
+        <text x="186" y="250" text-anchor="middle" font-size="40">🫓</text>
       </svg>
     </div>
   </div>
@@ -335,303 +80,94 @@
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
     <span>🌶️ MADE IN ARDEN. COMPLAINED ABOUT IN ARDEN.</span><span>•</span>
-    <span>SEEN ON RING CAMERA</span><span>•</span>
-    <span>HEAT LEVEL: WHITE TESLA DOING 45 IN A 25</span><span>•</span>
-    <span>APPROVED BY NOBODY</span><span>•</span>
+    <span>GROWN ON THE 5-ACRE FARM</span><span>•</span>
+    <span>PAY BY ZELLE · GET A TEXT</span><span>•</span>
+    <span>SOLD NEIGHBOR-TO-NEIGHBOR</span><span>•</span>
     <span>🌶️ MADE IN ARDEN. COMPLAINED ABOUT IN ARDEN.</span><span>•</span>
-    <span>SEEN ON RING CAMERA</span><span>•</span>
-    <span>HEAT LEVEL: WHITE TESLA DOING 45 IN A 25</span><span>•</span>
-    <span>APPROVED BY NOBODY</span><span>•</span>
+    <span>GROWN ON THE 5-ACRE FARM</span><span>•</span>
+    <span>PAY BY ZELLE · GET A TEXT</span><span>•</span>
+    <span>SOLD NEIGHBOR-TO-NEIGHBOR</span><span>•</span>
   </div>
 </div>
+
+<!-- ===================== PRODUCT LINES ===================== -->
+<section class="section" id="lines">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker">The Pantry</div>
+      <h2>Five ways to start neighborhood drama</h2>
+      <p>Each label is its own little act of community defiance. Pick a line and load up the cart.</p>
+    </div>
+    <div class="lines">
+      <a class="line-card reveal" href="hotsauce.html">
+        <div class="art" style="background:linear-gradient(150deg,#f97316,#9c1019);font-size:4rem;">🌶️</div>
+        <div class="body"><h3>Hot Sauce</h3><p class="sub">“Locally sourced gossip. Imported peppers.”</p><div class="go">Shop hot sauce →</div></div>
+      </a>
+      <a class="line-card reveal" href="focaccia.html">
+        <div class="art" style="background:linear-gradient(150deg,#b6e02a,#3f7d3a);font-size:4rem;">🫓</div>
+        <div class="body"><h3>Focaccia</h3><p class="sub">“Carbs that pass architectural review.”</p><div class="go">Shop focaccia →</div></div>
+      </a>
+      <a class="line-card reveal" href="cookies.html">
+        <div class="art" style="background:linear-gradient(150deg,#e0a96d,#7a4a25);font-size:4rem;">🍪</div>
+        <div class="body"><h3>Premium Cookies</h3><p class="sub">“Reported to the bake-sale committee.”</p><div class="go">Shop cookies →</div></div>
+      </a>
+      <a class="line-card reveal" href="salsa.html">
+        <div class="art" style="background:linear-gradient(150deg,#e23b2a,#2bb0c9);font-size:4rem;">🍅</div>
+        <div class="body"><h3>Salsa</h3><p class="sub">“Caught dipping on Ring camera.”</p><div class="go">Shop salsa →</div></div>
+      </a>
+      <a class="line-card reveal" href="margarita-mix.html">
+        <div class="art" style="background:linear-gradient(150deg,#b6e02a,#2bb0c9);font-size:4rem;">🍹</div>
+        <div class="body"><h3>Margarita Mix</h3><p class="sub">“Golf carts, gossip, and poor judgment.”</p><div class="go">Shop margarita mix →</div></div>
+      </a>
+      <a class="line-card reveal" href="cart.html">
+        <div class="art" style="background:linear-gradient(150deg,#1a0e0a,#2a1812);font-size:4rem;">🛒</div>
+        <div class="body"><h3>Your Cart</h3><p class="sub">Mix &amp; match across everything — one order, one Zelle.</p><div class="go">Go to checkout →</div></div>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== STORY ===================== -->
 <section class="story section">
   <div class="wrap reveal">
-    <h2>Real peppers. Real <span class="lake">lake.</span> Real neighborhood drama.</h2>
-    <div class="stat">
-      <div class="big">5-acre</div>
-      <p>Working farm right here in the Agrihood. The peppers have a zip code.</p>
-    </div>
-    <div class="stat">
-      <div class="big">1,200</div>
-      <p>Acres wrapped around Lake Arden, where every batch is mixed, bottled and over-discussed.</p>
-    </div>
-    <div class="stat">
-      <div class="big">2nd</div>
-      <p>Clubhouse: fully built, completely finished, mysteriously not open. Our sauce is hotter than that timeline.</p>
-    </div>
+    <h2>Real farm. Real <span class="lake">lake.</span> Real neighborhood drama.</h2>
+    <div class="stat"><div class="big">5-acre</div><p>Working farm right here in the Agrihood. The herbs, peppers and tomatoes have a zip code.</p></div>
+    <div class="stat"><div class="big">1,200</div><p>Acres wrapped around Lake Arden, where every batch is made, jarred and over-discussed.</p></div>
+    <div class="stat"><div class="big">2nd</div><p>Clubhouse: fully built, completely finished, mysteriously not open. Our recipes are hotter than that timeline.</p></div>
   </div>
 </section>
 
-<!-- ===================== LINEUP ===================== -->
-<section class="section" id="lineup">
+<!-- ===================== HOW ORDERING WORKS ===================== -->
+<section class="section" id="how" style="background:var(--cream-2)">
   <div class="wrap">
     <div class="head reveal">
-      <div class="kicker">The Lineup</div>
-      <h2>Pick your level of HOA violation</h2>
-      <p>Every bottle is a flavor and a felony charge in the comment section. Tap the full vault for the whole rap sheet.</p>
+      <div class="kicker">No app. No middleman.</div>
+      <h2>How ordering works</h2>
+      <p>Four steps, neighbor-to-neighbor. The HOA was not consulted.</p>
     </div>
-
-    <div class="grid" id="cardgrid"><!-- cards injected by JS --></div>
-
-    <div class="vault-wrap reveal">
-      <button class="btn btn-dark" id="vaultBtn" aria-expanded="false" aria-controls="vault">View the full vault →</button>
-      <div class="vault" id="vault">
-        <div class="vault-grid" id="vaultGrid"><!-- injected --></div>
-      </div>
+    <div class="steps reveal">
+      <div class="step"><div class="ico">🛒</div><h3>Add to cart</h3><p>Load up on anything across all five Arden lines — it's one shared cart.</p></div>
+      <div class="step"><div class="ico">🧾</div><h3>Place your order</h3><p>Tell us your name &amp; phone. You'll get an <b>order number</b> on the spot.</p></div>
+      <div class="step"><div class="ico">💸</div><h3>Pay by Zelle</h3><p>Send the total via Zelle and drop your order number in the memo.</p></div>
+      <div class="step"><div class="ico">📲</div><h3>Get a text</h3><p>Once your payment lands, we text you that your order is <b>confirmed</b>.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== HEAT INDEX ===================== -->
-<section class="heatindex section" id="heat">
-  <div class="wrap">
-    <div class="head reveal">
-      <div class="kicker" style="color:var(--ember)">The Arden Heat Index™</div>
-      <h2>How spicy is it, really?</h2>
-      <p>Scoville units are for cowards. We measure heat in local incidents.</p>
-    </div>
-    <div class="scale reveal" id="scale"><!-- injected --></div>
-  </div>
-</section>
-
-<!-- ===================== FARM & LAKE ===================== -->
-<section class="farm section" id="farm">
-  <div class="wrap">
-    <div class="farm-art reveal" aria-hidden="true">
-      <svg viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <rect width="600" height="440" fill="#bfe3ec"/>
-        <rect y="250" width="600" height="190" fill="#cfe8c2"/>
-        <ellipse cx="300" cy="430" rx="340" ry="120" fill="#2bb0c9" opacity=".55"/>
-        <path d="M0 250 Q150 210 300 250 T600 250 V250 H0Z" fill="#a9d98f"/>
-        <!-- sun -->
-        <circle cx="510" cy="80" r="46" fill="#ffb43b"/>
-        <!-- rows of crops -->
-        <g fill="#3f7d3a">
-          <rect x="40" y="300" width="14" height="40" rx="6"/><rect x="80" y="296" width="14" height="44" rx="6"/>
-          <rect x="120" y="302" width="14" height="38" rx="6"/><rect x="160" y="298" width="14" height="42" rx="6"/>
-        </g>
-        <!-- peppers -->
-        <g>
-          <path d="M70 332 q10 18 -2 34 q-16 -2 -14 -22 q1 -10 16 -12Z" fill="#d61f2b"/>
-          <path d="M132 330 q10 18 -2 34 q-16 -2 -14 -22 q1 -10 16 -12Z" fill="#f97316"/>
-        </g>
-        <!-- barn -->
-        <g>
-          <rect x="380" y="250" width="150" height="100" fill="#b5402f"/>
-          <path d="M375 250 L455 196 L535 250 Z" fill="#8f2c20"/>
-          <rect x="440" y="300" width="34" height="50" fill="#fbf3e4"/>
-        </g>
-        <!-- little kayak on lake -->
-        <g transform="translate(250 400)"><path d="M0 0 q40 18 80 0 q-40 22 -80 0Z" fill="#ffb43b"/><circle cx="40" cy="-6" r="7" fill="#1a0e0a"/></g>
-      </svg>
-    </div>
-    <div class="reveal">
-      <div class="kicker" style="color:var(--pepper);font-weight:800;letter-spacing:2.5px;text-transform:uppercase;font-size:.78rem">From our dirt to your drama</div>
-      <h2>Grown on the farm.<br>Bottled by the <span class="lake">lake.</span></h2>
-      <p>Arden was built as an agrihood — a whole neighborhood wrapped around a working farm and a giant lake. We just decided the peppers were too good to waste on the farm stand alone.</p>
-      <ul>
-        <li><span class="chk">✓</span> <span>Peppers grown a golf-cart ride away on the 5-acre community farm.</span></li>
-        <li><span class="chk">✓</span> <span>Mixed in small batches — no factory, no preservatives, no HOA architectural-review approval required.</span></li>
-        <li><span class="chk">✓</span> <span>Bottled lakeside, between kayak laps and Facebook arguments.</span></li>
-        <li><span class="chk">✓</span> <span>Zero data-center cooling water. Our only beef is with Project Tango.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== COMMENT WALL ===================== -->
-<section class="comments section" id="wall">
-  <div class="wrap">
-    <div class="head reveal">
-      <div class="kicker">As seen in the comment section</div>
-      <h2>Rated 5 stars. Reported 37 times.</h2>
-      <p>Real reactions* from the Arden community group. <small>(*lovingly fabricated)</small></p>
-    </div>
-    <div class="wall" id="wall-grid"><!-- injected --></div>
-  </div>
-</section>
-
-<!-- ===================== GET SOME ===================== -->
-<section class="getsome section" id="get">
+<!-- ===================== CTA ===================== -->
+<section class="cta-band section">
   <div class="wrap reveal">
-    <h2>Sold neighbor-to-neighbor.</h2>
-    <p>No checkout. No middleman. No HOA approval needed. Just a heads-up in the community group and a hand-off at the mailboxes (please don't park there).</p>
+    <h2>Start your bench.</h2>
+    <p>Sold neighbor-to-neighbor. No checkout fees, no middleman, no HOA approval needed — just a hand-off at the mailboxes (please don't park there).</p>
     <div class="hero-cta">
-      <!-- TODO: replace # with your real Arden Facebook group URL -->
-      <a href="#" class="btn btn-dark" data-link="facebook">💬 Order via the Arden group</a>
-      <!-- TODO: replace with your real email -->
-      <a href="mailto:hello@example.com?subject=Arden%20Hot%20Sauce%20order&body=Hi%20neighbor%2C%20I%27d%20like%20to%20order..." class="btn btn-ghost" style="border-color:rgba(255,255,255,.6);color:#fff">✉️ Email us</a>
+      <a href="hotsauce.html" class="btn btn-dark">🌶️ Start with hot sauce</a>
+      <a href="cart.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,.6);color:#fff">🛒 View cart</a>
     </div>
-    <p class="note">Batches are small and the gossip is fast — message us before the next pool wristband actually shows up.</p>
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  <div class="wrap">
-    <div class="top">
-      <div>
-        <div class="brand" style="color:var(--cream)"><span aria-hidden="true">🌶️</span> Arden Hot Sauce Co.</div>
-        <p style="max-width:34ch;margin:.6rem 0 0;color:#a8957f">A label of <b style="color:#cbb7a3">Arden Foods Co.</b> — premium homemade food, made by your neighbors in Loxahatchee, FL.</p>
-      </div>
-      <div class="disclaimers" aria-label="Label warnings">
-        <span>⚠️ May cause neighborhood-wide discussion.</span>
-        <span>Not responsible for Facebook posts.</span>
-        <span>Best enjoyed during HOA meetings.</span>
-        <span>Pairs well with wine & unsolicited opinions.</span>
-        <span>Made in Arden. Complained about in Arden.</span>
-      </div>
-    </div>
-    <p class="fine">“Keeping Arden spicy since the amenities opened… eventually.” Contains peppers, sarcasm, and community drama. Not affiliated with the Arden HOA, its developer, the second clubhouse, the pool wristband committee, or any data center. Sauce names are neighborhood satire — all in good fun, neighbors.</p>
-    <div class="legal">
-      <span>© <span id="year"></span> Arden Foods Co.</span>
-      <span>Loxahatchee, FL</span>
-      <span>Heat level: someone parked at the mailbox.</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function () {
-  "use strict";
-
-  /* ---------- Data ---------- */
-  var sauces = [
-    { name: "HOA Violation Heat",          slogan: "Too spicy for community standards.",            heat: 3, lvl: "Mild Infraction", scoville: "Jalapeño base", flag: false },
-    { name: "Golf Cart Road Rage",         slogan: "0 to HOA violation in 3.2 seconds.",            heat: 4, lvl: "Roundabout", scoville: "Serrano blend", flag: false },
-    { name: "Caught on Ring Camera",       slogan: "Smile, you're spicy.",                          heat: 4, lvl: "After Dark", scoville: "Habanero", flag: false },
-    { name: "The Amenity Isn't Open Yet",  slogan: "Hotter than the 2nd clubhouse timeline.",       heat: 5, lvl: "Indefinite", scoville: "Ghost-adjacent", flag: true },
-    { name: "Neighborhood Watch Inferno",  slogan: "Seen on Ring Camera.",                          heat: 4, lvl: "Suspicious", scoville: "Habanero + chipotle", flag: false },
-    { name: "Karen's Complaint Pepper Blend", slogan: "Rated 5 stars. Reported 37 times.",          heat: 3, lvl: "Manager, please", scoville: "Cayenne", flag: false },
-    { name: "Roundabout Rage",             slogan: "Nobody knows who has the right-of-way.",        heat: 4, lvl: "Yield (?)", scoville: "Scotch bonnet", flag: false },
-    { name: "Project Tango Tears",         slogan: "0% data-center water. 100% neighborhood spice.", heat: 5, lvl: "Opposed 7–0", scoville: "Ghost pepper", flag: false },
-    { name: "Arden AF",                    slogan: "Locally sourced gossip. Imported peppers.",     heat: 5, lvl: "House Reserve", scoville: "Reaper hint", flag: true }
-  ];
-
-  var vault = [
-    ["Make Arden Great Again", "One drop and you'll file an HOA complaint."],
-    ["Ding Dong Ditch Diablo", "You'll never see it coming."],
-    ["Arden Facebook Famous", "Now accepting thoughts, prayers, and comments."],
-    ["Who Left This Dog Poop?", "The mystery burns on."],
-    ["Speeding Through the Roundabout", "0 to HOA violation in 3.2 seconds."],
-    ["Pool Parking Lot Pepper Sauce", "Fighting for spots since day one."],
-    ["The Gym Is Full Again", "Maximum occupancy. Maximum heat."],
-    ["Arden After Dark", "Golf carts, gossip, and poor judgment."],
-    ["Community Guidelines Ghost Pepper", "Post removed by admin."],
-    ["The HOA President's Revenge", "Approved by nobody."],
-    ["Neighborhood Drama Reserve", "Aged in Facebook comments."],
-    ["Golf Cart Mafia Heat", "Respect the cul-de-sac."],
-    ["Unleashed & Unsupervised", "Just like the neighborhood kids."],
-    ["Amenity Access Denied", "Restricted area. Unlimited spice."],
-    ["The Arden Comment Section", "Mild issue. Extreme reactions."],
-    ["White Tesla Tears", "Electrifying heat."],
-    ["Trespassing Taco Sauce", "For recreational use only."]
-  ];
-
-  var scale = [
-    { n: "1", b: "Someone parked at the mailbox", s: "A gentle warmth. You'll mention it later.", w: "22%" },
-    { n: "2", b: "White Tesla doing 45 in a 25", s: "Noticeable. Mildly electrifying.", w: "42%" },
-    { n: "3", b: "Kids at the amenity after dark", s: "Unsupervised heat. Things escalate.", w: "62%" },
-    { n: "4", b: "Did anyone else hear that noise?", s: "You're checking your Ring camera now.", w: "80%" },
-    { n: "5", b: "The pool wristband finally arrived", s: "Pure chaos. Nobody saw it coming.", w: "100%" }
-  ];
-
-  var posts = [
-    { who: "Karen M.", sub: "Arden Community Group", color: "#d61f2b", text: "Has anyone else tried this sauce?? I gave it 5 stars and then reported the post. Both stand.", likes: "147", cmts: "37" },
-    { who: "Neighborhood Watch", sub: "Posted at 11:47 PM", color: "#1a0e0a", text: "Caught on Ring: a golf cart doing donuts in the roundabout AND a jar of this sauce changing hands at the mailbox. Wild night.", likes: "203", cmts: "61" },
-    { who: "Reggie B.", sub: "HOA board (allegedly)", color: "#2bb0c9", text: "This sauce is not approved by the architectural review committee. That said, can I get two jars.", likes: "98", cmts: "12" },
-    { who: "Tesla Owner", sub: "Doing 45 in a 25", color: "#9c1019", text: "Tried 'White Tesla Tears.' Electrifying. 10/10. Charging my mouth now.", likes: "76", cmts: "9" },
-    { who: "Farm Volunteer", sub: "5-acre Agrihood", color: "#3f7d3a", text: "Picked these peppers myself this morning. They have a zip code. They have TERROIR.", likes: "182", cmts: "21" },
-    { who: "Anti-Tango", sub: "notoprojecttango", color: "#f97316", text: "Finally a heat source in this town that DOESN'T need 600 cooling fans. 🔥", likes: "311", cmts: "88" },
-    { who: "Pool Committee", sub: "Wristbands: pending", color: "#b6e02a", text: "We'll be issuing wristbands to verify sauce buyers shortly. (We've been saying this for 8 months.)", likes: "54", cmts: "133" }
-  ];
-
-  function flames(n) {
-    var out = "";
-    for (var i = 1; i <= 5; i++) out += '<span class="flame' + (i <= n ? ' on' : '') + '" aria-hidden="true">🌶️</span>';
-    return out;
-  }
-
-  /* ---------- Render cards ---------- */
-  var grid = document.getElementById("cardgrid");
-  grid.innerHTML = sauces.map(function (s) {
-    return '<article class="card reveal' + (s.flag ? ' flag' : '') + '">' +
-      '<div class="label-top"><span class="scoville">' + s.scoville + '</span>' +
-        '<svg class="bottle-mini" viewBox="0 0 40 64" aria-hidden="true"><rect x="15" y="0" width="10" height="7" rx="2" fill="#1a0e0a"/><path d="M13 8 q-5 6 -5 16 v32 a6 6 0 0 0 6 6 h12 a6 6 0 0 0 6 -6 v-32 q0 -10 -5 -16Z" fill="#d61f2b"/><rect x="11" y="26" width="18" height="24" rx="3" fill="#fbf3e4"/></svg>' +
-      '</div>' +
-      '<h3>' + s.name + '</h3>' +
-      '<p class="slogan">“' + s.slogan + '”</p>' +
-      '<div class="heat">' + flames(s.heat) + '<span class="lvl">' + s.lvl + '</span></div>' +
-    '</article>';
-  }).join("");
-
-  /* ---------- Render vault ---------- */
-  document.getElementById("vaultGrid").innerHTML = vault.map(function (v) {
-    return '<div class="vault-item"><b>' + v[0] + '</b><span>“' + v[1] + '”</span></div>';
-  }).join("");
-
-  /* ---------- Render heat scale ---------- */
-  document.getElementById("scale").innerHTML = scale.map(function (r) {
-    return '<div class="scale-row"><div class="num">' + r.n + '</div>' +
-      '<div class="desc"><b>' + r.b + '</b><span>' + r.s + '</span>' +
-      '<div class="meter"><i style="--w:' + r.w + '"></i></div></div></div>';
-  }).join("");
-
-  /* ---------- Render comment wall ---------- */
-  document.getElementById("wall-grid").innerHTML = posts.map(function (p) {
-    var initials = p.who.split(" ").map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
-    return '<div class="post reveal"><div class="who">' +
-      '<div class="av" style="background:' + p.color + '">' + initials + '</div>' +
-      '<div><b>' + p.who + '</b><span>' + p.sub + '</span></div></div>' +
-      '<p>' + p.text + '</p>' +
-      '<div class="meta"><span>👍 ' + p.likes + '</span><span>💬 ' + p.cmts + '</span></div></div>';
-  }).join("");
-
-  /* ---------- Vault toggle ---------- */
-  var vBtn = document.getElementById("vaultBtn"), vEl = document.getElementById("vault");
-  vBtn.addEventListener("click", function () {
-    var open = vEl.classList.toggle("open");
-    vBtn.setAttribute("aria-expanded", open);
-    vBtn.textContent = open ? "Hide the vault ↑" : "View the full vault →";
-  });
-
-  /* ---------- Mobile nav ---------- */
-  var toggle = document.querySelector(".nav-toggle"), links = document.getElementById("navlinks");
-  toggle.addEventListener("click", function () {
-    var open = links.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open);
-  });
-  links.addEventListener("click", function (e) {
-    if (e.target.tagName === "A") { links.classList.remove("open"); toggle.setAttribute("aria-expanded", false); }
-  });
-
-  /* ---------- Reveal on scroll ---------- */
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) { en.target.classList.add("revealed"); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
-
-  /* heat index meter reveal */
-  var hi = document.querySelector(".heatindex");
-  new IntersectionObserver(function (e, o) {
-    if (e[0].isIntersecting) { hi.classList.add("revealed"); o.disconnect(); }
-  }, { threshold: 0.25 }).observe(hi);
-
-  /* ---------- year + facebook placeholder guard ---------- */
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.querySelectorAll('[data-link="facebook"]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      if (a.getAttribute("href") === "#") {
-        e.preventDefault();
-        alert("Drop your Arden Facebook group link here (in index.html) and this button will take neighbors straight to it. 🌶️");
-      }
-    });
-  });
-})();
-</script>
+<script src="assets/catalog.js"></script>
+<script src="assets/cart.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
