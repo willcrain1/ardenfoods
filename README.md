@@ -46,7 +46,7 @@ There's no automated SMS and no payment API — Zelle is out-of-band by design, 
 **1. Orders → Google Sheet:**
 1. Create a new Google Sheet (any name, e.g. "Arden Orders").
 2. Open **Extensions → Apps Script**, delete the starter code, and paste in the contents of [`google-sheets-webhook.gs`](google-sheets-webhook.gs).
-3. **Deploy → New deployment** → type **Web app** → Execute as **Me** → Who has access **Anyone** → Deploy. Authorize when Google prompts you (it's your own script).
+3. **Deploy → New deployment** → type **Web app** → Execute as **Me** → Who has access **Anyone** → Deploy. Authorize when Google prompts you (it's your own script). Use the public **Anyone** option, not **Only myself** or **Anyone with Google account**; those settings return a 403 from the storefront.
 4. Copy the Web app URL (ends in `/exec`) and paste it into `SHEET_WEBHOOK_URL` near the top of `assets/cart.js`.
 5. Place a test order on the site — a row should appear in the Sheet within a few seconds, with a header row added automatically.
 
@@ -57,6 +57,7 @@ CONTACT_EMAIL: "hello@example.com"          // fallback email
 ```
 - **Until `SHEET_WEBHOOK_URL` is set**, placing an order opens a pre-filled email to `CONTACT_EMAIL` instead (so no order is ever lost).
 - If you edit `google-sheets-webhook.gs` later, redeploy via **Manage deployments → edit (pencil) → Version: New version → Deploy** to keep the same URL.
+- If checkout shows a 403 for `script.google.com`, edit that same deployment and confirm **Execute as: Me**, **Who has access: Anyone**, then deploy a **New version**.
 
 **2. Prices (`assets/catalog.js`):** every price is a clearly-marked **placeholder**. Update them to your real prices (the cart totals read from here).
 

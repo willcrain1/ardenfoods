@@ -8,6 +8,8 @@
  * 3. Deploy > New deployment > gear icon > select type "Web app".
  *      - Execute as: Me
  *      - Who has access: Anyone
+ *    Important: "Only myself" or "Anyone with Google account" will return
+ *    a 403 from the public storefront. It must be the public "Anyone" option.
  * 4. Click Deploy. Google will prompt you to authorize the script —
  *    click through (it's your own script, on your own sheet).
  * 5. Copy the Web app URL it gives you (ends in /exec) and paste it
@@ -18,6 +20,13 @@
  * If you edit this script later, use Deploy > Manage deployments >
  * (pencil icon) > Version: New version > Deploy to keep the same URL.
  *
+ * 403 troubleshooting:
+ * - Open Deploy > Manage deployments > edit (pencil icon).
+ * - Confirm "Execute as" is "Me".
+ * - Confirm "Who has access" is "Anyone".
+ * - Set Version to "New version" and click Deploy.
+ * - Make sure assets/cart.js uses the Web app URL ending in /exec, not /dev.
+ *
  * Workflow once orders are coming in:
  * - A customer Zelles you and gives you their order number.
  * - Find that order number in this sheet (sort/filter the Order # column)
@@ -27,6 +36,7 @@
  *   column.
  */
 function doPost(e) {
+  var p = parsePayload_(e);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName("Orders");
   if (!sheet) {
@@ -41,7 +51,6 @@ function doPost(e) {
     sheet.setFrozenRows(1);
   }
 
-  var p = e.parameter;
   sheet.appendRow([
     p.timestamp || new Date().toLocaleString(),
     p.order_number || "",
@@ -60,4 +69,15 @@ function doPost(e) {
   return ContentService
     .createTextOutput(JSON.stringify({ result: "success" }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function parsePayload_(e) {
+  if (e && e.postData && e.postData.contents) {
+    try {
+      return JSON.parse(e.postData.contents);
+    } catch (err) {
+      // Fall back to form fields for older storefront versions.
+    }
+  }
+  return (e && e.parameter) || {};
 }

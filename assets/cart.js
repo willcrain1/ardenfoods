@@ -118,25 +118,31 @@
     var readyToText = "Hi " + order.name.split(" ")[0] + ", your Arden order " + order.number + " is confirmed! 🌶️ We'll be in touch on delivery.";
 
     if (CONFIG.SHEET_WEBHOOK_URL) {
-      var fd = new FormData();
-      fd.append("timestamp", new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
-      fd.append("order_number", order.number);
-      fd.append("status", "Pending payment");
-      fd.append("total", money(order.total));
-      fd.append("customer_name", order.name);
-      fd.append("customer_phone", order.phone);
-      fd.append("customer_email", order.email || "");
-      fd.append("delivery", order.delivery);
-      fd.append("address", order.address || "");
-      fd.append("notes", order.notes || "");
-      fd.append("items", itemsText);
-      fd.append("ready_to_text", readyToText);
+      var payload = {
+        timestamp: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+        order_number: order.number,
+        status: "Pending payment",
+        total: money(order.total),
+        customer_name: order.name,
+        customer_phone: order.phone,
+        customer_email: order.email || "",
+        delivery: order.delivery,
+        address: order.address || "",
+        notes: order.notes || "",
+        items: itemsText,
+        ready_to_text: readyToText
+      };
 
       // Apps Script web apps don't send CORS headers back, so the
       // response can't be read from here ("no-cors"). The request still
       // reaches the script and the row still gets appended — we just
       // can't confirm success beyond the network call completing.
-      return fetch(CONFIG.SHEET_WEBHOOK_URL, { method: "POST", mode: "no-cors", body: fd })
+      return fetch(CONFIG.SHEET_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      })
         .then(function () { return { ok: true, via: "sheet" }; });
     }
 
