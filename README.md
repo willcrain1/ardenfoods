@@ -1,6 +1,6 @@
-# 🌶️ Arden Foods Co.
+# 🌶️ Florida Man Fire Sauce Co.
 
-A modern, fun **multi-page storefront** for Arden Foods Co. — a homemade, neighbor-to-neighbor food brand based in the Arden agrihood in Loxahatchee, FL. Hot sauce, focaccia, premium cookies, salsa, and margarita mixes, with a lightweight **order-by-Zelle** flow.
+A modern, fun **multi-page storefront** for Florida Man Fire Sauce Co. — a homemade, neighbor-to-neighbor food brand based in the Arden agrihood in Loxahatchee, FL. Hot sauce, focaccia, premium cookies, salsa, and margarita mixes, with a lightweight **order-by-Zelle** flow.
 
 > *"Keeping Arden spicy since the amenities opened… eventually."*
 

@@ -1,5 +1,5 @@
 /* ============================================================
-   Arden Foods Co. — shared site chrome
+   Florida Man Fire Sauce Co. — shared site chrome
    Renders the nav + footer on every page, wires the mobile
    menu, scroll-reveal, add-to-cart buttons, and cart badge.
    Edit the nav/footer ONCE here, not per page.
@@ -27,7 +27,7 @@
     header.className = "nav";
     header.innerHTML =
       '<div class="wrap nav-inner">' +
-        '<a href="index.html" class="brand"><span class="flame" aria-hidden="true">🌶️</span> Arden Foods Co.</a>' +
+        '<a href="index.html" class="brand"><span class="flame" aria-hidden="true">🌶️</span> Florida Man Fire Sauce Co.</a>' +
         '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>' +
         '<nav class="nav-links" id="navlinks">' + links +
           '<a href="cart.html" class="nav-cart' + (current === "cart" ? " active" : "") + '">🛒 Cart ' +
@@ -74,7 +74,7 @@
       '<div class="wrap">' +
         '<div class="top">' +
           '<div>' +
-            '<div class="brand" style="color:var(--cream)"><span aria-hidden="true">🌶️</span> Arden Foods Co.</div>' +
+            '<div class="brand" style="color:var(--cream)"><span aria-hidden="true">🌶️</span> Florida Man Fire Sauce Co.</div>' +
             '<p style="max-width:38ch;margin:.6rem 0 0;color:#a8957f">Premium homemade food — hot sauce, focaccia, cookies, salsa &amp; margarita mixes — made by your neighbors in the Arden agrihood, Loxahatchee, FL.</p>' +
             '<div class="foot-links">' + footLinks + '</div>' +
           '</div>' +
@@ -88,7 +88,7 @@
         '</div>' +
         '<p class="fine">“Keeping Arden spicy since the amenities opened… eventually.” Contains peppers, sarcasm, and community drama. Not affiliated with the Arden HOA, its developer, the second clubhouse, the pool wristband committee, or any data center. Product names are neighborhood satire — all in good fun, neighbors.</p>' +
         '<div class="legal">' +
-          '<span>© ' + year + ' Arden Foods Co.</span>' +
+          '<span>© ' + year + ' Florida Man Fire Sauce Co.</span>' +
           '<span>Loxahatchee, FL</span>' +
           '<span>Heat level: someone parked at the mailbox.</span>' +
         '</div>' +
