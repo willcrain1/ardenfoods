@@ -17,29 +17,29 @@ window.ARDEN_CATALOG = {
   "hs-trio":      { line: "Hot Sauce",     name: "Build-a-Bench 3-Pack",      variant: "Pick any 3",  price: 27 },
 
   /* ---------------- FOCACCIA ---------------- */
-  "fo-rosemary":  { line: "Focaccia",      name: "Farm Rosemary Focaccia",    variant: "Half sheet",  price: 14 },
-  "fo-tomato":    { line: "Focaccia",      name: "Cherry Tomato & Sea Salt",  variant: "Half sheet",  price: 15 },
-  "fo-garlic":    { line: "Focaccia",      name: "Roasted Garlic & Herb",     variant: "Half sheet",  price: 15 },
-  "fo-olive":     { line: "Focaccia",      name: "Castelvetrano Olive",       variant: "Half sheet",  price: 16 },
+  "fo-rosemary":  { line: "Focaccia",      name: "Rosemary HOA Approval",       variant: "Half sheet",  price: 14 },
+  "fo-tomato":    { line: "Focaccia",      name: "Cherry Tomato Block Party",   variant: "Half sheet",  price: 15 },
+  "fo-garlic":    { line: "Focaccia",      name: "Roasted Garlic Ring Repellent", variant: "Half sheet",  price: 15 },
+  "fo-olive":     { line: "Focaccia",      name: "Castelvetrano Clubhouse Key", variant: "Half sheet",  price: 16 },
 
   /* ---------------- COOKIES ---------------- */
-  "ck-choc":      { line: "Cookies",       name: "Brown Butter Chocolate Chunk", variant: "Half dozen", price: 12 },
-  "ck-snicker":   { line: "Cookies",       name: "Brown Sugar Snickerdoodle",    variant: "Half dozen", price: 11 },
-  "ck-oat":       { line: "Cookies",       name: "Oatmeal Cranberry White-Choc", variant: "Half dozen", price: 12 },
-  "ck-doublechoc":{ line: "Cookies",       name: "Double-Dark Sea Salt",         variant: "Half dozen", price: 13 },
-  "ck-dozen":     { line: "Cookies",       name: "Mixed Dozen Box",              variant: "12 cookies", price: 22 },
+  "ck-choc":      { line: "Cookies",       name: "Brown Butter Bake-Sale Violation", variant: "Half dozen", price: 12 },
+  "ck-snicker":   { line: "Cookies",       name: "Snickerdoodle Newsletter Bribe",   variant: "Half dozen", price: 11 },
+  "ck-oat":       { line: "Cookies",       name: "Oatmeal Cranberry Plausible Deniability", variant: "Half dozen", price: 12 },
+  "ck-doublechoc":{ line: "Cookies",       name: "Double Dark Ring Camera Footage",  variant: "Half dozen", price: 13 },
+  "ck-dozen":     { line: "Cookies",       name: "The Group Chat Dozen",             variant: "12 cookies", price: 22 },
 
   /* ---------------- SALSA ---------------- */
-  "sa-red":       { line: "Salsa",         name: "Red Salsa",                 variant: "16 oz jar",   price: 9 },
-  "sa-tomatillo": { line: "Salsa",         name: "Tomatillo Salsa Verde",     variant: "16 oz jar",   price: 9 },
-  "sa-avocado":   { line: "Salsa",         name: "Avocado Salsa",             variant: "16 oz jar",   price: 10 },
-  "sa-corn":      { line: "Salsa",         name: "Roasted Corn Salsa",        variant: "16 oz jar",   price: 10 },
-  "sa-flight":    { line: "Salsa",         name: "The Salsa Flight",          variant: "4 × 8 oz",    price: 28 },
+  "sa-red":       { line: "Salsa",         name: "Caught Dipping Red",        variant: "16 oz jar",   price: 9 },
+  "sa-tomatillo": { line: "Salsa",         name: "Tomatillo Comment Section", variant: "16 oz jar",   price: 9 },
+  "sa-avocado":   { line: "Salsa",         name: "Avocado HOA Settlement",    variant: "16 oz jar",   price: 10 },
+  "sa-corn":      { line: "Salsa",         name: "Roasted Corn Golf Cart Bribe", variant: "16 oz jar",   price: 10 },
+  "sa-flight":    { line: "Salsa",         name: "The Farm Stand Flight",     variant: "4 × 8 oz",    price: 28 },
 
   /* ---------------- MARGARITA MIX ---------------- */
-  "mg-spicy":     { line: "Margarita Mix", name: "Spicy Margarita Mix",       variant: "32 oz bottle", price: 14 },
-  "mg-skinny":    { line: "Margarita Mix", name: "Skinny Margarita Mix",      variant: "32 oz bottle", price: 14 },
-  "mg-pineapple": { line: "Margarita Mix", name: "Pineapple Margarita Mix",   variant: "32 oz bottle", price: 15 },
-  "mg-mango":     { line: "Margarita Mix", name: "Mango Margarita Mix",       variant: "32 oz bottle", price: 15 },
-  "mg-flight":    { line: "Margarita Mix", name: "Cul-de-Sac 4-Pack",         variant: "4 × 12 oz",    price: 30 }
+  "mg-spicy":     { line: "Margarita Mix", name: "Spicy 4-Way Stop Mix",       variant: "32 oz bottle", price: 14 },
+  "mg-skinny":    { line: "Margarita Mix", name: "Skinny Wristband Wait Mix",  variant: "32 oz bottle", price: 14 },
+  "mg-pineapple": { line: "Margarita Mix", name: "Pineapple Deck-Not-Open Mix",variant: "32 oz bottle", price: 15 },
+  "mg-mango":     { line: "Margarita Mix", name: "Mango Dock Sunset Mix",      variant: "32 oz bottle", price: 15 },
+  "mg-flight":    { line: "Margarita Mix", name: "Cul-de-Sac Party Pack",      variant: "4 × 12 oz",    price: 30 }
 };

@@ -94,11 +94,11 @@
 <script>
 (function () {
   var items = [
-    { id: "ck-choc",       tag: "Signature", blurb: "Brown-butter dough, dark + milk chunks, flaky salt on top.", flag: true },
-    { id: "ck-snicker",    tag: "Classic",   blurb: "Soft brown-sugar snickerdoodle rolled in cinnamon sugar.", flag: false },
-    { id: "ck-oat",        tag: "Chewy",     blurb: "Oatmeal, dried cranberry, white chocolate. Deceptively wholesome.", flag: false },
-    { id: "ck-doublechoc", tag: "Decadent",  blurb: "Double-dark cocoa dough with a sea-salt finish. For the bold.", flag: false },
-    { id: "ck-dozen",      tag: "Best Value",blurb: "A mixed dozen — one of everything, and then some. Sharing optional.", flag: false }
+    { id: "ck-choc",       tag: "Signature", blurb: "Brown-butter dough, dark + milk chunks, flaky salt on top. Confiscated by the bake-sale committee twice.", flag: true },
+    { id: "ck-snicker",    tag: "Classic",   blurb: "Soft brown-sugar snickerdoodle rolled in cinnamon sugar. The going rate to keep your name out of the newsletter.", flag: false },
+    { id: "ck-oat",        tag: "Chewy",     blurb: "Oatmeal, dried cranberry, white chocolate. Technically health food, which is your defense at the next HOA meeting.", flag: false },
+    { id: "ck-doublechoc", tag: "Decadent",  blurb: "Double-dark cocoa dough with a sea-salt finish. There's footage of you eating the whole box alone.", flag: false },
+    { id: "ck-dozen",      tag: "Best Value",blurb: "One of everything, and then some. Sharing is optional; defending your choices in the group chat is not.", flag: false }
   ];
   function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }
   document.getElementById("grid").innerHTML = items.map(function (it) {

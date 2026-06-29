@@ -73,7 +73,7 @@
       <p>Each 32 oz bottle mixes a pitcher. The Spicy one comes with a kick rating — measured on the Arden scale, naturally.</p>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="reveal" style="text-align:center;color:#6a574a;margin-top:1.4rem;font-size:.9rem">🔞 Mixers only — no alcohol included. Please sip responsibly (and yield in the roundabout).</p>
+    <p class="reveal" style="text-align:center;color:#6a574a;margin-top:1.4rem;font-size:.9rem">🔞 Mixers only — no alcohol included. Please sip responsibly (and yield at the 4-way stop).</p>
   </div>
 </section>
 
@@ -94,11 +94,11 @@
 <script>
 (function () {
   var items = [
-    { id: "mg-spicy",     tag: "🌶️ Kick", heat: 4, lvl: "Spicy",     blurb: "Lime, agave and muddled farm peppers. A roundabout for your tastebuds.", flag: true },
-    { id: "mg-skinny",    tag: "Skinny",  heat: 0, lvl: "Light",     blurb: "Fresh lime, a whisper of agave, zero junk. Guilt parked elsewhere.", flag: false },
-    { id: "mg-pineapple", tag: "Tropical",heat: 0, lvl: "Sweet",     blurb: "Pressed pineapple + lime. Tastes like a vacation you can golf-cart to.", flag: false },
-    { id: "mg-mango",     tag: "Tropical",heat: 0, lvl: "Juicy",     blurb: "Ripe mango and citrus. Sunset on the dock in a glass.", flag: false },
-    { id: "mg-flight",    tag: "Best Value",heat: 2, lvl: "All four", blurb: "All four mixes in party packs. Officially un-sanctioned by the HOA.", flag: false }
+    { id: "mg-spicy",     tag: "🌶️ Kick", heat: 4, lvl: "Spicy",     blurb: "Lime, agave and muddled farm peppers. Hits like a golf cart with nobody yielding at the 4-way stop.", flag: true },
+    { id: "mg-skinny",    tag: "Skinny",  heat: 0, lvl: "Light",     blurb: "Fresh lime, a whisper of agave, zero junk. Light enough to drink while you're still waiting on that pool wristband.", flag: false },
+    { id: "mg-pineapple", tag: "Tropical",heat: 0, lvl: "Sweet",     blurb: "Pressed pineapple + lime. Tastes like vacation on the amenity deck — the one that still isn't open.", flag: false },
+    { id: "mg-mango",     tag: "Tropical",heat: 0, lvl: "Juicy",     blurb: "Ripe mango and citrus. Sunset on the dock, golf cart parked at an angle that will absolutely get reported.", flag: false },
+    { id: "mg-flight",    tag: "Best Value",heat: 2, lvl: "All four", blurb: "All four mixes, party-pack size. Officially un-sanctioned by the HOA, unofficially mandatory for the cul-de-sac.", flag: false }
   ];
   function flames(n){ if(!n) return '<span class="lvl" style="margin-left:0;color:#00bfc2">No heat</span>'; var o=""; for(var i=1;i<=5;i++) o+='<span class="flame'+(i<=n?" on":"")+'" aria-hidden="true">🌶️</span>'; return o; }
   function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }
