@@ -93,11 +93,11 @@
 <script>
 (function () {
   var items = [
-    { id: "sa-red",       tag: "Classic",   heat: 3, lvl: "Medium",  blurb: "Roasted tomatoes, charred onion, a little smoke. The crowd-pleaser.", flag: true },
-    { id: "sa-tomatillo", tag: "Verde",     heat: 4, lvl: "Tangy+",   blurb: "Bright tomatillo, cilantro and lime. Tart enough to start an argument.", flag: false },
-    { id: "sa-avocado",   tag: "Creamy",    heat: 2, lvl: "Mild",     blurb: "Silky avocado-blended salsa. Pourable guac, basically.", flag: false },
-    { id: "sa-corn",      tag: "Sweet",     heat: 1, lvl: "Gentle",   blurb: "Roasted farm corn, black bean and pepper. Sweet, smoky, kid-approved.", flag: false },
-    { id: "sa-flight",    tag: "Best Value",heat: 4, lvl: "All four", blurb: "All four salsas in tasting jars. Host the cul-de-sac.", flag: false }
+    { id: "sa-red",       tag: "Classic",   heat: 3, lvl: "Medium",  blurb: "Roasted tomatoes, charred onion, a little smoke. The crowd-pleaser everyone denies eating most of.", flag: true },
+    { id: "sa-tomatillo", tag: "Verde",     heat: 4, lvl: "Tangy+",   blurb: "Bright tomatillo, cilantro and lime. Tart enough to start the argument that ends up on the Arden Facebook page.", flag: false },
+    { id: "sa-avocado",   tag: "Creamy",    heat: 2, lvl: "Mild",     blurb: "Silky avocado-blended salsa. Pourable guac, basically — smooth enough to settle any dispute, including this one.", flag: false },
+    { id: "sa-corn",      tag: "Sweet",     heat: 1, lvl: "Gentle",   blurb: "Roasted farm corn, black bean and pepper. Sweet and smoky enough to get the kids off the golf cart.", flag: false },
+    { id: "sa-flight",    tag: "Best Value",heat: 4, lvl: "All four", blurb: "All four salsas in tasting jars. Host the cul-de-sac, crown a winner, start a new feud by Tuesday.", flag: false }
   ];
   function flames(n){ var o=""; for(var i=1;i<=5;i++) o+='<span class="flame'+(i<=n?" on":"")+'" aria-hidden="true">🌶️</span>'; return o; }
   function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }
