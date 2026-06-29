@@ -1,5 +1,5 @@
 /* ============================================================
-   Arden Foods Co. — cart + ordering engine
+   Florida Man Fire Sauce Co. — cart + ordering engine
    ------------------------------------------------------------
    Pure client-side. Cart lives in localStorage. On checkout we
    generate an order number, POST the order to the Google Sheets
@@ -20,7 +20,7 @@
     ZELLE_HANDLE: "Crump1787@gmail.com",
     // TODO: fallback contact email (used if the Sheet webhook isn't set yet).
     CONTACT_EMAIL: "Crump1787@gmail.com",
-    BRAND: "Arden Foods Co."
+    BRAND: "Florida Man Fire Sauce Co."
   };
 
   var KEY = "arden_cart";

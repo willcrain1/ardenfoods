@@ -1,5 +1,5 @@
 /**
- * Arden Foods Co. — order-logging webhook for Google Sheets.
+ * Florida Man Fire Sauce Co. — order-logging webhook for Google Sheets.
  *
  * Setup:
  * 1. Create a new Google Sheet (any name, e.g. "Arden Orders").
@@ -27,7 +27,7 @@
  *   column.
  */
 /**
- * Arden Foods Co. — order-logging webhook for Google Sheets with Email Notifications.
+ * Florida Man Fire Sauce Co. — order-logging webhook for Google Sheets with Email Notifications.
  */
 function testAuth() {
   MailApp.sendEmail(Session.getActiveUser().getEmail(), "Arden test", "If you got this, Mail permission works.");

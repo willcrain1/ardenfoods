@@ -1,5 +1,5 @@
 /* ============================================================
-   Arden Foods Co. — product catalog (single source of truth)
+   Florida Man Fire Sauce Co. — product catalog (single source of truth)
    ------------------------------------------------------------
    The cart reads name + price from here by id, so the buttons
    on the product pages always match the totals at checkout.
