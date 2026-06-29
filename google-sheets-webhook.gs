@@ -29,6 +29,10 @@
 /**
  * Arden Foods Co. — order-logging webhook for Google Sheets with Email Notifications.
  */
+function testAuth() {
+  MailApp.sendEmail(Session.getActiveUser().getEmail(), "Arden test", "If you got this, Mail permission works.");
+}
+
 function doPost(e) {
   // 1. FORCE THE SCRIPT TO OPEN YOUR EXACT SPREADSHEET BY ID
   var SPREADSHEET_ID = "1vZ0MCcy4DwbBjwkO0c_6XF2vdbVL9I3VyjXFdglSMWM"; 
@@ -97,7 +101,7 @@ function doPost(e) {
   // -------------------------------------------------------------------------
   try {
     // Change this to whatever email address you want to receive notifications at
-    var NOTIFICATION_RECIPIENT = "william.e.crain@gmail.com"; 
+    var NOTIFICATION_RECIPIENT = "Crump1787@gmail.com"; 
     
     var emailSubject = " New Arden Order Received: " + order_number + " (" + customer_name + ")";
     

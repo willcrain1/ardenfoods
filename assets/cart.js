@@ -15,7 +15,7 @@
     // google-sheets-webhook.gs + README for setup). Every order becomes
     // a row in your Google Sheet. Until set, checkout falls back to
     // opening a pre-filled email instead.
-    SHEET_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbzcBBqK8NGzItinyHHj7_XBONbI8h7Qq93tEeHS2xIPLM4_XWDrXFx1f_W1qff7jlD1lQ/exec",
+    SHEET_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbxR49C7FTa-HzPBLmiyuPim0U95qXHpvrcVHmvX0-8HiOOINXn58loPWJub9uNTwyPgIA/exec",
     // Zelle handle (the email your Zelle is registered to).
     ZELLE_HANDLE: "Crump1787@gmail.com",
     // TODO: fallback contact email (used if the Sheet webhook isn't set yet).
