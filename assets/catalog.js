@@ -37,7 +37,7 @@ window.ARDEN_CATALOG = {
   "sa-flight":    { line: "Salsa",         name: "The Farm Stand Flight",     variant: "4 × 8 oz",    price: 28 },
 
   /* ---------------- MARGARITA MIX ---------------- */
-  "mg-spicy":     { line: "Margarita Mix", name: "Spicy 4-Way Stop Mix",       variant: "32 oz bottle", price: 14 },
+  "mg-spicy":     { line: "Margarita Mix", name: "Spicy 3-Way Stop Mix",       variant: "32 oz bottle", price: 14 },
   "mg-skinny":    { line: "Margarita Mix", name: "Skinny Wristband Wait Mix",  variant: "32 oz bottle", price: 14 },
   "mg-pineapple": { line: "Margarita Mix", name: "Pineapple Deck-Not-Open Mix",variant: "32 oz bottle", price: 15 },
   "mg-mango":     { line: "Margarita Mix", name: "Mango Dock Sunset Mix",      variant: "32 oz bottle", price: 15 },
