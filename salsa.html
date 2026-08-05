@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "Product", "name": "Arden Salsa", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Salsa", "description": "Small-batch salsa made with produce from the Arden farm.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "9", "highPrice": "28", "availability": "https://schema.org/InStock" } }
+{ "@context": "https://schema.org", "@type": "Product", "name": "Arden Salsa", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Salsa", "description": "Small-batch salsa made with produce from the Arden farm.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "10", "highPrice": "10", "availability": "https://schema.org/InStock" } }
 </script>
 </head>
 <body data-page="salsa">
@@ -30,9 +30,9 @@
       <h1>Caught dipping<br><span class="pop">on Ring camera.</span></h1>
       <p class="tag">Four salsas, blended from tomatoes, tomatillos and roasted corn grown a golf-cart ride away. Bring chips. Bring backup.</p>
       <div class="trust">
+        <span>🌱 <b>All organic</b></span>
+        <span>🏡 <b>Locally sourced</b></span>
         <span>🍅 <b>Farm tomatoes</b></span>
-        <span>🌽 <b>Roasted corn</b></span>
-        <span>🥑 <b>Fresh avocado</b></span>
       </div>
       <div class="hero-cta">
         <a href="#shop" class="btn btn-primary">Shop salsa</a>
@@ -67,12 +67,12 @@
 <section class="section" id="shop">
   <div class="wrap">
     <div class="head reveal">
-      <div class="kicker">Four ways to dip</div>
+      <div class="kicker">Three ways to dip</div>
       <h2>Pick your jar</h2>
-      <p>Mild to "did anyone else hear that noise?" — each jar gets a heat rating on the Arden scale.</p>
+      <p>Classic, verde, or creamy — each jar gets a heat rating on the Arden scale. All organic, all delicious, all photographed by the Ring camera at the mailbox.</p>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="reveal" style="text-align:center;color:#6a574a;margin-top:1.4rem;font-size:.9rem">Can't choose? The Salsa Flight gets you all four.</p>
+    <p class="reveal" style="text-align:center;color:#6a574a;margin-top:1.4rem;font-size:.9rem">🌱 All organic ingredients — locally sourced or from the Arden farm when available.</p>
   </div>
 </section>
 
@@ -93,11 +93,9 @@
 <script>
 (function () {
   var items = [
-    { id: "sa-red",       tag: "Classic",   heat: 3, lvl: "Medium",  blurb: "Roasted tomatoes, charred onion, a little smoke. The crowd-pleaser everyone denies eating most of.", flag: true },
-    { id: "sa-tomatillo", tag: "Verde",     heat: 4, lvl: "Tangy+",   blurb: "Bright tomatillo, cilantro and lime. Tart enough to start the argument that ends up on the Arden Facebook page.", flag: false },
-    { id: "sa-avocado",   tag: "Creamy",    heat: 2, lvl: "Mild",     blurb: "Silky avocado-blended salsa. Pourable guac, basically — smooth enough to settle any dispute, including this one.", flag: false },
-    { id: "sa-corn",      tag: "Sweet",     heat: 1, lvl: "Gentle",   blurb: "Roasted farm corn, black bean and pepper. Sweet and smoky enough to get the kids off the golf cart.", flag: false },
-    { id: "sa-flight",    tag: "Best Value",heat: 4, lvl: "All four", blurb: "All four salsas in tasting jars. Host the cul-de-sac, crown a winner, start a new feud by Tuesday.", flag: false }
+    { id: "sa-red",              tag: "Classic", heat: 3, lvl: "Medium", blurb: "Roasted tomatoes, charred onion, a little smoke. The crowd-pleaser everyone denies eating most of. HOA approved by accident.", flag: true  },
+    { id: "sa-tomatillo",        tag: "Verde",   heat: 4, lvl: "Tangy+", blurb: "Bright tomatillo, cilantro and lime. Tart enough to start the argument that ends up on the Arden Facebook page.",             flag: false },
+    { id: "sa-creamy-tomatillo", tag: "Creamy",  heat: 2, lvl: "Mild",   blurb: "Silky blended tomatillo — smooth, tangy, and just dangerous enough to eat with a spoon. Three complaints filed. Worth it.",   flag: false }
   ];
   function flames(n){ var o=""; for(var i=1;i<=5;i++) o+='<span class="flame'+(i<=n?" on":"")+'" aria-hidden="true">🌶️</span>'; return o; }
   function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }

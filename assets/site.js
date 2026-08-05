@@ -8,11 +8,9 @@
   "use strict";
 
   var PAGES = [
-    { key: "hotsauce",  href: "hotsauce.html",      label: "Hot Sauce" },
-    { key: "focaccia",  href: "focaccia.html",      label: "Focaccia" },
-    { key: "cookies",   href: "cookies.html",       label: "Cookies" },
-    { key: "salsa",     href: "salsa.html",         label: "Salsa" },
-    { key: "margarita", href: "margarita-mix.html", label: "Margarita Mix" }
+    { key: "hotsauce", href: "hotsauce.html", label: "Hot Sauce" },
+    { key: "salsa",    href: "salsa.html",    label: "Salsa" },
+    { key: "cookies",  href: "cookies.html",  label: "Cookies" }
   ];
 
   var current = document.body.getAttribute("data-page") || "";
@@ -75,7 +73,7 @@
         '<div class="top">' +
           '<div>' +
             '<div class="brand" style="color:var(--cream)"><span aria-hidden="true">🌶️</span> Florida Man Fire Sauce Co.</div>' +
-            '<p style="max-width:38ch;margin:.6rem 0 0;color:#a8957f">Premium homemade food — hot sauce, focaccia, cookies, salsa &amp; margarita mixes — made by your neighbors in the Arden agrihood, Loxahatchee, FL.</p>' +
+            '<p style="max-width:38ch;margin:.6rem 0 0;color:#a8957f">Small-batch hot sauce, salsa &amp; premium cookies — all organic, locally sourced, made by your neighbors in the Arden agrihood, Loxahatchee, FL.</p>' +
             '<div class="foot-links">' + footLinks + '</div>' +
           '</div>' +
           '<div class="disclaimers" aria-label="Label warnings">' +
