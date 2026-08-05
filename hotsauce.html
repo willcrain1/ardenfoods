@@ -110,12 +110,6 @@
     </div>
     <div class="grid" id="cardgrid"><!-- cards injected by JS --></div>
 
-    <div class="vault-wrap reveal">
-      <button class="btn btn-dark" id="vaultBtn" aria-expanded="false" aria-controls="vault">View the full vault →</button>
-      <div class="vault" id="vault">
-        <div class="vault-grid" id="vaultGrid"><!-- injected --></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -167,25 +161,6 @@
     { id: "hs-serrano",   name: "Serrano Sunrise",          slogan: "Vinegar-forward. Slightly aggressive. Like a 7am HOA email.",                  heat: 2, lvl: "Mild Infraction", tag: "Serrano + vinegar", flag: false }
   ];
 
-  var vault = [
-    ["Make Arden Great Again", "One drop and you'll file an HOA complaint."],
-    ["Ding Dong Ditch Diablo", "You'll never see it coming."],
-    ["Arden Facebook Famous", "Now accepting thoughts, prayers, and comments."],
-    ["Who Left This Dog Poop?", "The mystery burns on."],
-    ["Speeding Through the 3-Way Stop", "0 to HOA violation in 3.2 seconds."],
-    ["Pool Parking Lot Pepper Sauce", "Fighting for spots since day one."],
-    ["The Gym Is Full Again", "Maximum occupancy. Maximum heat."],
-    ["Arden After Dark", "Golf carts, gossip, and poor judgment."],
-    ["Community Guidelines Ghost Pepper", "Post removed by admin."],
-    ["The HOA President's Revenge", "Approved by nobody."],
-    ["Neighborhood Drama Reserve", "Aged in Facebook comments."],
-    ["Golf Cart Mafia Heat", "Respect the cul-de-sac."],
-    ["Unleashed & Unsupervised", "Just like the neighborhood kids."],
-    ["Amenity Access Denied", "Restricted area. Unlimited spice."],
-    ["The Arden Comment Section", "Mild issue. Extreme reactions."],
-    ["White Tesla Tears", "Electrifying heat."],
-    ["Trespassing Taco Sauce", "For recreational use only."]
-  ];
 
   var scale = [
     { n: "1", b: "Someone parked at the mailbox", s: "A gentle warmth. You'll mention it later.", w: "22%" },
@@ -226,11 +201,7 @@
     '</article>';
   }).join("");
 
-  document.getElementById("vaultGrid").innerHTML = vault.map(function (v) {
-    return '<div class="vault-item"><b>' + v[0] + '</b><span>“' + v[1] + '”</span></div>';
-  }).join("");
-
-  document.getElementById("scale").innerHTML = scale.map(function (r) {
+document.getElementById("scale").innerHTML = scale.map(function (r) {
     return '<div class="scale-row"><div class="num">' + r.n + '</div>' +
       '<div class="desc"><b>' + r.b + '</b><span>' + r.s + '</span>' +
       '<div class="meter"><i style="--w:' + r.w + '"></i></div></div></div>';
@@ -245,12 +216,6 @@
       '<div class="meta"><span>👍 ' + p.likes + '</span><span>💬 ' + p.cmts + '</span></div></div>';
   }).join("");
 
-  var vBtn = document.getElementById("vaultBtn"), vEl = document.getElementById("vault");
-  vBtn.addEventListener("click", function () {
-    var open = vEl.classList.toggle("open");
-    vBtn.setAttribute("aria-expanded", open);
-    vBtn.textContent = open ? "Hide the vault ↑" : "View the full vault →";
-  });
 })();
 </script>
 </body>
