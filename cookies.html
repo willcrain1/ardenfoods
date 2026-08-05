@@ -18,8 +18,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "Product", "name": "Arden Premium Cookies", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Cookies", "description": "Small-batch premium cookies baked by neighbors in the Arden agrihood.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "11", "highPrice": "22", "availability": "https://schema.org/InStock" } }
+{ "@context": "https://schema.org", "@type": "Product", "name": "Chocolate Chip Cookies Your Way", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Cookies", "description": "All-organic, customizable chocolate chip cookies baked by neighbors in the Arden agrihood. Choose your upgrade: cookie butter core, chocolate core, marshmallow, cookies & cream, buttercream, or pistachio butter core.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "3", "highPrice": "5", "availability": "https://schema.org/InStock" } }
 </script>
+<style>
+.builder-wrap { max-width: 660px; margin: 0 auto 2rem; }
+.builder-card { background: #fff; border-radius: var(--r); padding: 2rem; box-shadow: var(--shadow); }
+.builder-form { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.4rem; }
+.builder-label { display: block; font-weight: 700; font-size: .82rem; letter-spacing: .6px; text-transform: uppercase; color: var(--ink); margin-bottom: .45rem; }
+.builder-select { width: 100%; padding: .75em 1em; border: 2px solid #e3d2b3; border-radius: 12px; font-family: var(--font-body); font-size: 1rem; background: var(--cream); color: var(--ink); cursor: pointer; transition: border-color .2s; appearance: auto; }
+.builder-select:focus { border-color: var(--lake); outline: none; }
+.builder-qty-row { display: flex; align-items: center; gap: 1rem; }
+.builder-qty { width: 90px; padding: .75em 1em; border: 2px solid #e3d2b3; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-align: center; font-family: var(--font-body); background: var(--cream); color: var(--ink); }
+.builder-buy { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; padding-top: .4rem; border-top: 1px solid #e3d2b3; }
+.upgrade-menu { background: var(--cream-2); border-radius: var(--r); padding: 2rem; margin-top: 1.6rem; }
+.upgrade-menu h3 { font-size: 1.25rem; margin-bottom: 1.2rem; }
+.upgrade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.6rem; }
+.tier-head { font-weight: 800; font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--pepper); margin-bottom: .8rem; border-bottom: 2px solid var(--pepper); padding-bottom: .3rem; }
+.upgrade-item { margin-bottom: .65rem; font-size: .91rem; line-height: 1.45; color: #3a2a1e; }
+.upgrade-item b { color: var(--ink); }
+.organic-note { color: #6a574a; font-size: .9rem; text-align: center; margin-top: 1.8rem; }
+</style>
 </head>
 <body data-page="cookies">
 
@@ -30,8 +48,9 @@
       <h1>Reported to the<br><span class="pop">bake-sale committee.</span></h1>
       <p class="tag">Thick, crackly-topped, slightly-underbaked-on-purpose premium cookies. Worth breaking community guidelines for.</p>
       <div class="trust">
+        <span>🌱 <b>All organic</b></span>
+        <span>🏡 <b>Locally sourced</b></span>
         <span>🧈 <b>Brown butter</b></span>
-        <span>🧂 <b>Flaky sea salt</b></span>
         <span>🍫 <b>Real chocolate chunks</b></span>
       </div>
       <div class="hero-cta">
@@ -68,12 +87,72 @@
 <section class="section" id="shop">
   <div class="wrap">
     <div class="head reveal">
-      <div class="kicker">By the half-dozen</div>
-      <h2>The cookie jar</h2>
-      <p>Sold by the half-dozen, or grab a mixed dozen and let the neighborhood fight over the last one.</p>
+      <div class="kicker">Build yours</div>
+      <h2>Chocolate Chip Cookies, Your Way</h2>
+      <p>Start at $3 a cookie and pick your upgrade. The HOA cannot stop you from getting the pistachio core. All organic ingredients, sourced locally or from the Arden farm when available.</p>
     </div>
-    <div class="grid" id="grid"></div>
-    <p class="reveal" style="text-align:center;color:#6a574a;margin-top:1.4rem;font-size:.9rem">Allergy notes or a custom box for an event? Add a note at checkout.</p>
+
+    <div class="builder-wrap reveal">
+      <div class="builder-card">
+        <div class="label-top"><span class="tagchip">Customize</span><span aria-hidden="true" style="font-size:2rem">🍪</span></div>
+        <h3 style="font-size:1.55rem;margin-bottom:.5rem">Chocolate Chip Cookie</h3>
+        <p class="blurb">Thick, crackly-topped, slightly-underbaked-on-purpose. All organic, all neighbor-made, all reported to the bake-sale committee at least once.</p>
+
+        <div class="builder-form">
+          <div>
+            <label class="builder-label" for="ck-upgrade">Choose your upgrade</label>
+            <select id="ck-upgrade" class="builder-select">
+              <option value="ck-plain" data-price="3">No upgrade — just the classic  ($3)</option>
+              <optgroup label="── +$1 upgrade ──────────────────">
+                <option value="ck-cbutter"   data-price="4">Cookie Butter Core  ($4)</option>
+                <option value="ck-choc-milk" data-price="4">Milk Chocolate Core  ($4)</option>
+                <option value="ck-choc-dark" data-price="4">Dark Chocolate Core  ($4)</option>
+              </optgroup>
+              <optgroup label="── +$2 upgrade ──────────────────">
+                <option value="ck-marshmallow" data-price="5">Vanilla Bean Marshmallow Topped  ($5)</option>
+                <option value="ck-cream"        data-price="5">Cookies and Cream  ($5)</option>
+                <option value="ck-buttercream"  data-price="5">Vanilla Buttercream Topping  ($5)</option>
+                <option value="ck-pistachio"    data-price="5">Pistachio Butter Core  ($5)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label class="builder-label" for="ck-qty">How many cookies?</label>
+            <div class="builder-qty-row">
+              <input id="ck-qty" type="number" min="1" max="48" value="1" class="builder-qty">
+              <span style="color:#6a574a;font-size:.88rem">priced per cookie</span>
+            </div>
+          </div>
+
+          <div class="builder-buy">
+            <div class="price" id="ck-total">$3<small>per cookie</small></div>
+            <button class="btn btn-add" id="ck-add-btn">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="upgrade-menu">
+        <h3>What's in each upgrade?</h3>
+        <div class="upgrade-grid">
+          <div>
+            <div class="tier-head">+$1 Upgrades</div>
+            <div class="upgrade-item"><b>Cookie Butter Core</b> — Biscoff-style cookie butter piped right through the middle. First violation of the bake-sale code.</div>
+            <div class="upgrade-item"><b>Milk Chocolate Core</b> — Melty milk choc ganache. Warm, gooey, filed a complaint with itself.</div>
+            <div class="upgrade-item"><b>Dark Chocolate Core</b> — Bittersweet ganache for the more architecturally refined neighbor.</div>
+          </div>
+          <div>
+            <div class="tier-head">+$2 Upgrades</div>
+            <div class="upgrade-item"><b>Vanilla Bean Marshmallow Topped</b> — Torch-finished marshmallow on top. Reported to the bake-sale committee before it had time to cool.</div>
+            <div class="upgrade-item"><b>Cookies and Cream</b> — Oreo crumble folded in and pressed on top. The pool committee took three.</div>
+            <div class="upgrade-item"><b>Vanilla Buttercream Topping</b> — House-made frosting piped on fresh. The HOA wants the recipe and a six-month waitlist.</div>
+            <div class="upgrade-item"><b>Pistachio Butter Core</b> — House-ground pistachio butter center. Architectural review pending since last spring.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="reveal organic-note">🌱 All organic ingredients — locally sourced or from the Arden farm when available. Allergy notes? Add them at checkout.</p>
   </div>
 </section>
 
@@ -93,22 +172,37 @@
 <script src="assets/site.js"></script>
 <script>
 (function () {
-  var items = [
-    { id: "ck-choc",       tag: "Signature", blurb: "Brown-butter dough, dark + milk chunks, flaky salt on top. Confiscated by the bake-sale committee twice.", flag: true },
-    { id: "ck-snicker",    tag: "Classic",   blurb: "Soft brown-sugar snickerdoodle rolled in cinnamon sugar. The going rate to keep your name out of the newsletter.", flag: false },
-    { id: "ck-oat",        tag: "Chewy",     blurb: "Oatmeal, dried cranberry, white chocolate. Technically health food, which is your defense at the next HOA meeting.", flag: false },
-    { id: "ck-doublechoc", tag: "Decadent",  blurb: "Double-dark cocoa dough with a sea-salt finish. There's footage of you eating the whole box alone.", flag: false },
-    { id: "ck-dozen",      tag: "Best Value",blurb: "One of everything, and then some. Sharing is optional; defending your choices in the group chat is not.", flag: false }
-  ];
-  function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }
-  document.getElementById("grid").innerHTML = items.map(function (it) {
-    var p = window.ARDEN_CATALOG[it.id] || {};
-    return '<article class="card prod reveal' + (it.flag ? " flag" : "") + '">' +
-      '<div class="label-top"><span class="tagchip">' + it.tag + '</span><span aria-hidden="true" style="font-size:2rem">🍪</span></div>' +
-      '<h3>' + p.name + '</h3><p class="blurb">' + it.blurb + '</p>' +
-      '<div class="buy"><div class="price">' + money(p.price||0) + '<small>' + (p.variant||"") + '</small></div>' +
-      '<button class="btn btn-add" data-add="' + it.id + '">Add to cart</button></div></article>';
-  }).join("");
+  var sel    = document.getElementById("ck-upgrade");
+  var qtyEl  = document.getElementById("ck-qty");
+  var totalEl = document.getElementById("ck-total");
+  var addBtn = document.getElementById("ck-add-btn");
+
+  function getPrice() {
+    var opt = sel.options[sel.selectedIndex];
+    return parseInt(opt.getAttribute("data-price"), 10) || 3;
+  }
+
+  function updateTotal() {
+    var price = getPrice();
+    var qty = Math.max(1, parseInt(qtyEl.value, 10) || 1);
+    var label = qty === 1 ? "per cookie" : "for " + qty + " cookies";
+    totalEl.innerHTML = "$" + (price * qty) + "<small>" + label + "</small>";
+  }
+
+  sel.addEventListener("change", updateTotal);
+  qtyEl.addEventListener("input", updateTotal);
+  updateTotal();
+
+  addBtn.addEventListener("click", function () {
+    var id  = sel.value;
+    var qty = Math.max(1, parseInt(qtyEl.value, 10) || 1);
+    if (!window.Arden) return;
+    for (var i = 0; i < qty; i++) { window.Arden.addToCart(id, 1); }
+    var label = addBtn.textContent;
+    addBtn.classList.add("added");
+    addBtn.textContent = "Added ✓";
+    setTimeout(function () { addBtn.classList.remove("added"); addBtn.textContent = label; }, 1100);
+  });
 })();
 </script>
 </body>

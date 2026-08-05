@@ -34,8 +34,8 @@
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
-    "lowPrice": "10",
-    "highPrice": "12",
+    "lowPrice": "7",
+    "highPrice": "7",
     "availability": "https://schema.org/InStock"
   }
 }
@@ -51,9 +51,9 @@
       <h1>Locally sourced <span class="pop">gossip.</span><br>Imported peppers.</h1>
       <p class="tag">Small-batch hot sauce grown on the Arden farm and bottled by your neighbors. Keeping Arden spicy since the amenities opened… <em>eventually.</em></p>
       <div class="trust">
-        <span>🌱 <b>Farm-to-bottle</b></span>
+        <span>🌱 <b>All organic</b></span>
+        <span>🏡 <b>Locally sourced</b></span>
         <span>👩‍🌾 <b>Made by neighbors</b></span>
-        <span>🛶 <b>Bottled lakeside</b></span>
         <span>🚫 <b>0% Project Tango water</b></span>
       </div>
       <div class="hero-cta">
@@ -163,12 +163,8 @@
   "use strict";
   // sauce cards (id ties to catalog for the buyable ones)
   var sauces = [
-    { id: "hs-hoa",     name: "HOA Violation Heat",        slogan: "Too spicy for community standards.",            heat: 3, lvl: "Mild Infraction", tag: "Jalapeño base", flag: false },
-    { id: "hs-golfcart",name: "Golf Cart Road Rage",       slogan: "0 to HOA violation in 3.2 seconds.",            heat: 4, lvl: "3-Way Stop",    tag: "Serrano blend", flag: false },
-    { id: "hs-ring",    name: "Caught on Ring Camera",     slogan: "Smile, you're spicy.",                          heat: 4, lvl: "After Dark",    tag: "Habanero",      flag: false },
-    { id: "hs-amenity", name: "The Amenity Isn't Open Yet",slogan: "Hotter than the 2nd clubhouse timeline.",       heat: 5, lvl: "Indefinite",    tag: "Ghost-adjacent",flag: true },
-    { id: "hs-ardenaf", name: "Arden AF",                  slogan: "Locally sourced gossip. Imported peppers.",     heat: 5, lvl: "House Reserve", tag: "Reaper hint",   flag: true },
-    { id: "hs-trio",    name: "Build-a-Bench 3-Pack",      slogan: "Pick any three. Share none.",                   heat: 4, lvl: "Best Value",    tag: "Mix & match",   flag: false }
+    { id: "hs-caribbean", name: "Caribbean Mango Habanero", slogan: "Sweet enough to get past the welcome committee. Hot enough to get reported.", heat: 3, lvl: "Sweet Heat",     tag: "Habanero + mango",  flag: true  },
+    { id: "hs-serrano",   name: "Serrano Sunrise",          slogan: "Vinegar-forward. Slightly aggressive. Like a 7am HOA email.",                  heat: 2, lvl: "Mild Infraction", tag: "Serrano + vinegar", flag: false }
   ];
 
   var vault = [
