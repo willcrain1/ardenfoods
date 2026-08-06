@@ -259,7 +259,7 @@
     }
     A.clear();
     elEmpty.hidden = true; elCheckout.hidden = true; elConfirm.hidden = false;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    elConfirm.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   /* ---------- copy buttons ---------- */
