@@ -39,6 +39,7 @@
         <div class="panel" style="margin-bottom:1.5rem">
           <h2>Your cart</h2>
           <div id="items"></div>
+          <div id="ck-notice" hidden style="background:#fff4f1;border:1.5px solid var(--pepper);border-radius:12px;padding:.8rem 1rem;margin-top:1rem;color:var(--pepper-dk);font-size:.9rem"></div>
         </div>
 
         <form class="panel" id="orderForm" novalidate>
@@ -161,6 +162,17 @@
       return '<div class="row"><span>' + i.qty + '× ' + i.name + '</span><span>' + money(i.price * i.qty) + '</span></div>';
     }).join("");
     elSumTotal.textContent = money(A.total());
+
+    var ckNotice = document.getElementById("ck-notice");
+    var ckQty = cookieCount();
+    var hasCookies = cart.some(function (i) { return i.line === "Cookies"; });
+    if (hasCookies && ckQty < 6) {
+      var need = 6 - ckQty;
+      ckNotice.innerHTML = "🍪 <b>" + ckQty + " of 6 cookies</b> — add " + need + " more to meet the minimum. Mix and match styles!";
+      ckNotice.hidden = false;
+    } else {
+      ckNotice.hidden = true;
+    }
   }
 
   // qty / remove (delegation)
@@ -171,6 +183,10 @@
     if (rm) { A.removeItem(rm.getAttribute("data-remove")); render(); }
   });
   function getQty(id) { var f = A.getCart().filter(function (i){ return i.id === id; })[0]; return f ? f.qty : 0; }
+  function cookieCount() {
+    return A.getCart().filter(function (i) { return i.line === "Cookies"; })
+      .reduce(function (n, i) { return n + i.qty; }, 0);
+  }
 
   /* ---------- validation ---------- */
   function setInvalid(fieldId, bad) {
@@ -188,6 +204,9 @@
     var emailBad = !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
     setInvalid("f-email", emailBad); if (emailBad) ok = false;
     setInvalid("f-addr", !address); if (!address) ok = false;
+    var ckQty = cookieCount();
+    var hasCookies = A.getCart().some(function (i) { return i.line === "Cookies"; });
+    if (hasCookies && ckQty < 6) ok = false;
     return ok;
   }
 
@@ -196,7 +215,11 @@
     if (!A.getCart().length) return;
     if (!validate()) {
       var bad = document.querySelector(".field.invalid");
-      if (bad) bad.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (bad) { bad.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      else {
+        var ckN = document.getElementById("ck-notice");
+        if (ckN && !ckN.hidden) ckN.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
       return;
     }
     var btn = this;
