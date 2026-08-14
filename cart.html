@@ -166,9 +166,9 @@
     var ckNotice = document.getElementById("ck-notice");
     var ckQty = cookieCount();
     var hasCookies = cart.some(function (i) { return i.line === "Cookies"; });
-    if (hasCookies && ckQty < 6) {
-      var need = 6 - ckQty;
-      ckNotice.innerHTML = "🍪 <b>" + ckQty + " of 6 cookies</b> — add " + need + " more to meet the minimum. Mix and match styles!";
+    if (hasCookies && ckQty < 2) {
+      var need = 2 - ckQty;
+      ckNotice.innerHTML = "🍪 <b>" + ckQty + " of 2 cookies</b> — add " + need + " more to meet the minimum. Mix and match styles!";
       ckNotice.hidden = false;
     } else {
       ckNotice.hidden = true;
@@ -206,7 +206,7 @@
     setInvalid("f-addr", !address); if (!address) ok = false;
     var ckQty = cookieCount();
     var hasCookies = A.getCart().some(function (i) { return i.line === "Cookies"; });
-    if (hasCookies && ckQty < 6) ok = false;
+    if (hasCookies && ckQty < 2) ok = false;
     return ok;
   }
 

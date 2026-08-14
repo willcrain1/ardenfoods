@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "Product", "name": "Chocolate Chip Cookies Your Way", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Cookies", "description": "All-organic, customizable chocolate chip cookies baked by neighbors in the Arden agrihood. Choose your upgrade: cookie butter core, chocolate core, marshmallow, cookies & cream, buttercream, or pistachio butter core.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "3", "highPrice": "5", "availability": "https://schema.org/InStock" } }
+{ "@context": "https://schema.org", "@type": "Product", "name": "Chocolate Chip Cookies Your Way", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Cookies", "description": "All-organic, customizable chocolate chip cookies baked by neighbors in the Arden agrihood. Choose your upgrade: cookie butter core, chocolate core, marshmallow, cookies & cream, buttercream, or pistachio butter core.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "4", "highPrice": "5", "availability": "https://schema.org/InStock" } }
 </script>
 <style>
 .builder-wrap { max-width: 660px; margin: 0 auto 2rem; }
@@ -138,7 +138,7 @@
     <div class="head reveal">
       <div class="kicker">Build yours</div>
       <h2>Chocolate Chip Cookies, Your Way</h2>
-      <p>Start at $3 a cookie and pick your upgrade. The HOA cannot stop you from getting the pistachio core. All organic ingredients, sourced locally or from the Arden farm when available.</p>
+      <p>Start at $4 a cookie and pick your upgrade. The HOA cannot stop you from getting the pistachio core. All organic ingredients, sourced locally or from the Arden farm when available.</p>
     </div>
 
     <div class="builder-wrap reveal">
@@ -151,17 +151,15 @@
           <div>
             <label class="builder-label" for="ck-upgrade">Choose your upgrade</label>
             <select id="ck-upgrade" class="builder-select">
-              <option value="ck-plain" data-price="3">No upgrade — just the classic  ($3)</option>
+              <option value="ck-plain" data-price="4">No upgrade — just the classic  ($4)</option>
               <optgroup label="── +$1 upgrade ──────────────────">
-                <option value="ck-cbutter"   data-price="4">Cookie Butter Core  ($4)</option>
-                <option value="ck-choc-milk" data-price="4">Milk Chocolate Core  ($4)</option>
-                <option value="ck-choc-dark" data-price="4">Dark Chocolate Core  ($4)</option>
-              </optgroup>
-              <optgroup label="── +$2 upgrade ──────────────────">
+                <option value="ck-cbutter"     data-price="5">Cookie Butter Core  ($5)</option>
+                <option value="ck-choc-milk"   data-price="5">Milk Chocolate Core  ($5)</option>
+                <option value="ck-choc-dark"   data-price="5">Dark Chocolate Core  ($5)</option>
                 <option value="ck-marshmallow" data-price="5">Vanilla Bean Marshmallow Topped  ($5)</option>
-                <option value="ck-cream"        data-price="5">Cookies and Cream  ($5)</option>
-                <option value="ck-buttercream"  data-price="5">Vanilla Buttercream Topping  ($5)</option>
-                <option value="ck-pistachio"    data-price="5">Pistachio Butter Core  ($5)</option>
+                <option value="ck-cream"       data-price="5">Cookies and Cream  ($5)</option>
+                <option value="ck-buttercream" data-price="5">Vanilla Buttercream Topping  ($5)</option>
+                <option value="ck-pistachio"   data-price="5">Pistachio Butter Core  ($5)</option>
               </optgroup>
             </select>
           </div>
@@ -172,7 +170,7 @@
               <input id="ck-qty" type="number" min="1" max="48" value="1" class="builder-qty">
               <span style="color:#6a574a;font-size:.88rem">priced per cookie</span>
             </div>
-            <p style="color:var(--pepper-dk);font-size:.82rem;font-weight:600;margin:.5rem 0 0">Minimum 6 cookies per order — mix and match styles.</p>
+            <p style="color:var(--pepper-dk);font-size:.82rem;font-weight:600;margin:.5rem 0 0">Minimum 2 cookies per order — mix and match styles.</p>
           </div>
 
           <div class="builder-buy">
@@ -190,9 +188,6 @@
             <div class="upgrade-item"><b>Cookie Butter Core</b> — Biscoff-style cookie butter piped right through the middle. First violation of the bake-sale code.</div>
             <div class="upgrade-item"><b>Milk Chocolate Core</b> — Melty milk choc ganache. Warm, gooey, filed a complaint with itself.</div>
             <div class="upgrade-item"><b>Dark Chocolate Core</b> — Bittersweet ganache for the more architecturally refined neighbor.</div>
-          </div>
-          <div>
-            <div class="tier-head">+$2 Upgrades</div>
             <div class="upgrade-item"><b>Vanilla Bean Marshmallow Topped</b> — Torch-finished marshmallow on top. Reported to the bake-sale committee before it had time to cool.</div>
             <div class="upgrade-item"><b>Cookies and Cream</b> — Oreo crumble folded in and pressed on top. The pool committee took three.</div>
             <div class="upgrade-item"><b>Vanilla Buttercream Topping</b> — House-made frosting piped on fresh. The HOA wants the recipe and a six-month waitlist.</div>
