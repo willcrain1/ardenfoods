@@ -6,13 +6,13 @@
    ============================================================ */
 window.ARDEN_CATALOG = {
   /* ---------------- HOT SAUCE ---------------- */
-  "hs-caribbean": { line: "Hot Sauce", name: "HOA Violation",              variant: "5 oz bottle", price: 7 },
-  "hs-serrano":   { line: "Hot Sauce", name: "Serrano Substation Sunset", variant: "5 oz bottle", price: 7 },
+  "hs-caribbean": { line: "Hot Sauce", name: "HOA Violation",              variant: "5 oz bottle", price: 8 },
+  "hs-serrano":   { line: "Hot Sauce", name: "Serrano Substation Sunset", variant: "5 oz bottle", price: 8 },
 
   /* ---------------- SALSA ---------------- */
   "sa-red":              { line: "Salsa", name: "Classic Red Salsa",      variant: "16 oz jar", price: 10 },
   "sa-tomatillo":        { line: "Salsa", name: "Tomatillo Salsa",        variant: "16 oz jar", price: 10 },
-  "sa-creamy-tomatillo": { line: "Salsa", name: "Creamy Tomatillo Salsa", variant: "16 oz jar", price: 10 },
+  "sa-creamy-tomatillo": { line: "Salsa", name: "Creamy Tomatillo Salsa", variant: "16 oz jar", price: 12 },
 
   /* ---------------- COOKIES — per cookie, choose your style ---------------- */
   "ck-plain":       { line: "Cookies", name: "Chocolate Chip Cookie",                     variant: "per cookie", price: 4 },
