@@ -127,6 +127,9 @@ header.nav {
   .hero-art { max-width: 230px; order: -1; }
   .eyebrow { margin-inline: auto; }
 }
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(1.8rem, 9vw, 2.7rem); }
+}
 
 /* ---------- Marquee ---------- */
 .marquee-strip { background: var(--lime); color: var(--char); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: .82rem; padding: .65rem 0; overflow: hidden; white-space: nowrap; position: relative; z-index: 3; }
