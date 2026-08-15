@@ -135,6 +135,30 @@
   var elSumTotal = document.getElementById("sumTotal");
   var lastOrder = null;
 
+  var CUSTOMER_KEY = "arden_customer";
+
+  function saveCustomer() {
+    try {
+      localStorage.setItem(CUSTOMER_KEY, JSON.stringify({
+        name:    document.getElementById("name").value.trim(),
+        phone:   document.getElementById("phone").value.trim(),
+        email:   document.getElementById("email").value.trim(),
+        address: document.getElementById("address").value.trim()
+      }));
+    } catch (e) {}
+  }
+
+  function loadCustomer() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(CUSTOMER_KEY));
+      if (!saved) return;
+      if (saved.name)    document.getElementById("name").value    = saved.name;
+      if (saved.phone)   document.getElementById("phone").value   = saved.phone;
+      if (saved.email)   document.getElementById("email").value   = saved.email;
+      if (saved.address) document.getElementById("address").value = saved.address;
+    } catch (e) {}
+  }
+
   function money(n) { return A.money(n); }
 
   function render() {
@@ -237,6 +261,7 @@
       notes: document.getElementById("notes").value.trim()
     };
     lastOrder = order;
+    saveCustomer();
 
     A.submitOrder(order).then(function () {
       showConfirm(order, false);
@@ -273,6 +298,7 @@
 
   document.addEventListener("arden:cart-changed", render);
   render();
+  loadCustomer();
 })();
 </script>
 </body>
