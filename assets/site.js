@@ -94,6 +94,43 @@
     document.body.appendChild(footer);
   }
 
+  /* ---------- promo modal ---------- */
+  function buildPromoModal() {
+    if (sessionStorage.getItem("arden_promo_seen")) return;
+
+    var overlay = document.createElement("div");
+    overlay.className = "promo-overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Special offer");
+    overlay.innerHTML =
+      '<div class="promo-box">' +
+        '<button class="promo-close" aria-label="Close offer">✕</button>' +
+        '<span class="promo-eyebrow">🔥 Limited-time offer</span>' +
+        '<h2>Buy One,<br>Get One at<br>Regular Price.</h2>' +
+        '<p>That\'s right. You buy one jar. You pay for it. Then you buy another one. You pay for that one too.<br><br>The HOA couldn\'t believe we were allowed to do this.</p>' +
+        '<a href="#shop" class="btn btn-primary" style="width:100%">Shop the lineup →</a>' +
+        '<p class="promo-fine">Offer valid while you\'re in the mood. Cannot be combined with pool wristbands.</p>' +
+      '</div>';
+
+    function close() {
+      overlay.classList.add("closing");
+      sessionStorage.setItem("arden_promo_seen", "1");
+      setTimeout(function () { overlay.remove(); }, 260);
+    }
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay || e.target.closest(".promo-close")) close();
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function onKey(e) {
+      if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); }
+    });
+
+    document.body.appendChild(overlay);
+    overlay.querySelector(".promo-close").focus();
+  }
+
   /* ---------- scroll reveal ---------- */
   function initReveal() {
     var els = document.querySelectorAll(".reveal");
@@ -137,6 +174,7 @@
     initReveal();
     initAddToCart();
     if (window.Arden) window.Arden.updateBadge();
+    setTimeout(buildPromoModal, 900);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
