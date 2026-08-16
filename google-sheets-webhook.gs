@@ -103,7 +103,7 @@ function doPost(e) {
   // -------------------------------------------------------------------------
   try {
     // Change this to whatever email address you want to receive notifications at
-    var NOTIFICATION_RECIPIENT = "Crump1787@gmail.com"; 
+    var NOTIFICATION_RECIPIENT = "floridaman4firesauce@gmail.com";
     
     var emailSubject = " New Arden Order Received: " + order_number + " (" + customer_name + ")";
     
