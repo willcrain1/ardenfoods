@@ -44,7 +44,7 @@ function doPost(e) {
   }
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
-      "Timestamp", "Order #", "Status", "Total", "Customer Name",
+      "Timestamp", "Order Date", "Order #", "Status", "Total", "Customer Name",
       "Phone", "Email", "Delivery", "Address", "Notes", "Items",
       "Ready-to-text Message"
     ]);
@@ -63,6 +63,7 @@ function doPost(e) {
 
   // Extract variables accurately from either structural type
   var timestamp     = data.timestamp     || e.parameter.timestamp     || new Date().toLocaleString();
+  var order_date    = data.order_date    || e.parameter.order_date    || "";
   var order_number  = data.order_number  || data.number               || e.parameter.order_number || e.parameter.number || "";
   var status        = data.status        || e.parameter.status        || "Pending payment";
   var total         = data.total         || e.parameter.total         || "";
@@ -83,6 +84,7 @@ function doPost(e) {
   // Append data directly into your sheet
   sheet.appendRow([
     timestamp,
+    order_date,
     order_number,
     status,
     total,
