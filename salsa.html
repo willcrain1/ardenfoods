@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "Product", "name": "Arden Salsa", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Salsa", "description": "Small-batch salsa made with produce from the Arden farm.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "10", "highPrice": "12", "availability": "https://schema.org/InStock" } }
+{ "@context": "https://schema.org", "@type": "Product", "name": "Arden Salsa", "brand": { "@type": "Brand", "name": "Florida Man Fire Sauce Co." }, "category": "Salsa", "description": "Small-batch salsa made with produce from the Arden farm.", "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "5", "highPrice": "35", "availability": "https://schema.org/InStock" } }
 </script>
 </head>
 <body data-page="salsa">
@@ -67,12 +67,23 @@
 <section class="section" id="shop">
   <div class="wrap">
     <div class="head reveal">
-      <div class="kicker">Three ways to dip</div>
+      <div class="kicker">Five ways to dip</div>
       <h2>Pick your jar</h2>
-      <p>Classic, verde, or creamy — each jar gets a heat rating on the Arden scale. All organic, all delicious, all photographed by the Ring camera at the mailbox.</p>
+      <p>Classic, verde, creamy, corn, or mango — each jar gets a heat rating on the Arden scale. All organic, all delicious, all photographed by the Ring camera at the mailbox.</p>
     </div>
     <div class="grid" id="grid"></div>
     <p class="reveal" style="text-align:center;color:#6a574a;margin-top:1.4rem;font-size:.9rem">🌱 All organic ingredients — locally sourced or from the Arden farm when available.</p>
+  </div>
+</section>
+
+<section class="section" id="chips">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker">Chips &amp; Bundles</div>
+      <h2>Add chips. Save a dollar.</h2>
+      <p>Homemade baked tortilla chips — solo, bundled with your salsa, or in the full flight. Every bundle saves $1 over buying separately.</p>
+    </div>
+    <div class="grid" id="bundle-grid"></div>
   </div>
 </section>
 
@@ -93,12 +104,22 @@
 <script>
 (function () {
   var items = [
-    { id: "sa-red",              tag: "Classic", heat: 3, lvl: "Medium", blurb: "Roasted tomatoes, charred onion, a little smoke. The crowd-pleaser everyone denies eating most of. HOA approved by accident.", flag: true  },
-    { id: "sa-tomatillo",        tag: "Verde",   heat: 4, lvl: "Tangy+", blurb: "Bright tomatillo, cilantro and lime. Tart enough to start the argument that ends up on the Arden Facebook page.",             flag: false },
-    { id: "sa-creamy-tomatillo", tag: "Creamy",  heat: 2, lvl: "Mild",   blurb: "Silky blended tomatillo — smooth, tangy, and just dangerous enough to eat with a spoon. Three complaints filed. Worth it.",   flag: false }
+    { id: "sa-red",              tag: "Classic", heat: 3, lvl: "Medium",       blurb: "Roasted tomatoes, charred onion, a little smoke. The crowd-pleaser everyone denies eating most of. HOA approved by accident.",                                flag: true  },
+    { id: "sa-tomatillo",        tag: "Verde",   heat: 4, lvl: "Tangy+",       blurb: "Bright tomatillo, cilantro and lime. Tart enough to start the argument that ends up on the Arden Facebook page.",                                             flag: false },
+    { id: "sa-creamy-tomatillo", tag: "Creamy",  heat: 2, lvl: "Mild",         blurb: "Silky blended tomatillo — smooth, tangy, and just dangerous enough to eat with a spoon. Three complaints filed. Worth it.",                                    flag: false },
+    { id: "sa-corn",             tag: "Corn",    heat: 1, lvl: "Sweet & Mild", blurb: "Charred sweet corn, peppers, cilantro. Showed up to the HOA potluck and got more comments than the pool wristband update.",                                    flag: false },
+    { id: "sa-mango",            tag: "Mango",   heat: 3, lvl: "Tropical",     blurb: "Ripe mango, habanero, lime. Sweet up front, then it files a noise complaint. Flagged by the welcome committee. Absolutely worth it.",                          flag: false }
+  ];
+  var bundles = [
+    { id: "sa-chips",        tag: "Add-on", icon: "🫓", blurb: "Homemade baked tortilla chips. ~32 per bag. The HOA has no jurisdiction over chip quality."                                                                       },
+    { id: "sa-bundle-red",   tag: "Bundle", icon: "🫙", blurb: "Classic Red + a bag of chips. The obvious move. Saves $1 over buying separately."                                                                                 },
+    { id: "sa-bundle-tom",   tag: "Bundle", icon: "🫙", blurb: "Tomatillo Verde + a bag of chips. Tart and crunchy. Saves $1 over buying separately."                                                                            },
+    { id: "sa-bundle-cream", tag: "Bundle", icon: "🫙", blurb: "Creamy Tomatillo + a bag of chips. Silky, scoopable, dangerous in quantity. Saves $1 over buying separately."                                                    },
+    { id: "sa-flight",       tag: "Flight", icon: "✈️", blurb: "All 3 salsas — Classic, Verde, Creamy — plus a large bag of ~48 chips. The full Arden incident report. Saves $2 vs. buying everything separately.", flag: true  }
   ];
   function flames(n){ var o=""; for(var i=1;i<=5;i++) o+='<span class="flame'+(i<=n?" on":"")+'" aria-hidden="true">🌶️</span>'; return o; }
   function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }
+
   document.getElementById("grid").innerHTML = items.map(function (it) {
     var p = window.ARDEN_CATALOG[it.id] || {};
     return '<article class="card prod reveal' + (it.flag ? " flag" : "") + '">' +
@@ -107,6 +128,15 @@
       '<div class="heat">' + flames(it.heat) + '<span class="lvl">' + it.lvl + '</span></div>' +
       '<div class="buy"><div class="price">' + money(p.price||0) + '<small>' + (p.variant||"") + '</small></div>' +
       '<button class="btn btn-add" data-add="' + it.id + '">Add to cart</button></div></article>';
+  }).join("");
+
+  document.getElementById("bundle-grid").innerHTML = bundles.map(function (b) {
+    var p = window.ARDEN_CATALOG[b.id] || {};
+    return '<article class="card prod reveal' + (b.flag ? " flag" : "") + '">' +
+      '<div class="label-top"><span class="tagchip">' + b.tag + '</span><span aria-hidden="true" style="font-size:2rem">' + b.icon + '</span></div>' +
+      '<h3>' + p.name + '</h3><p class="blurb">' + b.blurb + '</p>' +
+      '<div class="buy"><div class="price">' + money(p.price||0) + '<small>' + (p.variant||"") + '</small></div>' +
+      '<button class="btn btn-add" data-add="' + b.id + '">Add to cart</button></div></article>';
   }).join("");
 })();
 </script>

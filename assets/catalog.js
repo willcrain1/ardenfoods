@@ -13,6 +13,15 @@ window.ARDEN_CATALOG = {
   "sa-red":              { line: "Salsa", name: "Classic Red Salsa",      variant: "16 oz jar", price: 10 },
   "sa-tomatillo":        { line: "Salsa", name: "Tomatillo Salsa",        variant: "16 oz jar", price: 10 },
   "sa-creamy-tomatillo": { line: "Salsa", name: "Creamy Tomatillo Salsa", variant: "16 oz jar", price: 12 },
+  "sa-corn":             { line: "Salsa", name: "Corn Salsa",             variant: "16 oz jar", price: 12 },
+  "sa-mango":            { line: "Salsa", name: "Mango Salsa",            variant: "16 oz jar", price: 12 },
+
+  /* ---------------- SALSA — CHIPS + BUNDLES ---------------- */
+  "sa-chips":        { line: "Salsa", name: "Baked Tortilla Chips",          variant: "~32 chips",             price:  5 },
+  "sa-bundle-red":   { line: "Salsa", name: "Classic Red Salsa + Chips",     variant: "16 oz jar + ~32 chips", price: 14 },
+  "sa-bundle-tom":   { line: "Salsa", name: "Tomatillo Salsa + Chips",       variant: "16 oz jar + ~32 chips", price: 14 },
+  "sa-bundle-cream": { line: "Salsa", name: "Creamy Tomatillo + Chips",      variant: "16 oz jar + ~32 chips", price: 16 },
+  "sa-flight":       { line: "Salsa", name: "Florida Man Salsa Flight",      variant: "3 salsas + ~48 chips",  price: 35 },
 
   /* ---------------- COOKIES — per cookie, choose your style ---------------- */
   "ck-plain":       { line: "Cookies", name: "Chocolate Chip Cookie",                     variant: "per cookie", price: 4 },

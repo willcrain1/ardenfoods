@@ -118,8 +118,10 @@
     var readyToText = "Hi " + order.name.split(" ")[0] + ", your Arden order " + order.number + " is confirmed! 🌶️ We'll be in touch on delivery.";
 
     if (CONFIG.SHEET_WEBHOOK_URL) {
+      var d = new Date();
       var payload = {
         timestamp: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+        order_date: d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"),
         order_number: order.number,
         status: "Pending payment",
         total: money(order.total),
