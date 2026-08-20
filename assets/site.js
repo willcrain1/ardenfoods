@@ -96,8 +96,6 @@
 
   /* ---------- promo modal ---------- */
   function buildPromoModal() {
-    if (sessionStorage.getItem("arden_promo_seen")) return;
-
     var overlay = document.createElement("div");
     overlay.className = "promo-overlay";
     overlay.setAttribute("role", "dialog");
@@ -115,7 +113,6 @@
 
     function close() {
       overlay.classList.add("closing");
-      sessionStorage.setItem("arden_promo_seen", "1");
       setTimeout(function () { overlay.remove(); }, 260);
     }
 
