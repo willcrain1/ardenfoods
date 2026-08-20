@@ -106,11 +106,11 @@
     overlay.innerHTML =
       '<div class="promo-box">' +
         '<button class="promo-close" aria-label="Close offer">✕</button>' +
-        '<span class="promo-eyebrow">🔥 Limited-time offer</span>' +
-        '<h2>Buy One,<br>Get One at<br>Regular Price.</h2>' +
-        '<p>That\'s right. You buy one jar. You pay for it. Then you buy another one. You pay for that one too.<br><br>The HOA couldn\'t believe we were allowed to do this.</p>' +
+        '<span class="promo-eyebrow">📦 Delivery update</span>' +
+        '<h2>Sunday<br>Delivery<br>This Week.</h2>' +
+        '<p>All orders placed between now and Sunday, August 23rd will be delivered on <b>Sunday 8/23</b>.<br><br>Place your order, pay by Zelle, and we\'ll text you when it\'s confirmed.</p>' +
         '<a href="#shop" class="btn btn-primary" style="width:100%">Shop the lineup →</a>' +
-        '<p class="promo-fine">Offer valid while you\'re in the mood. Cannot be combined with pool wristbands.</p>' +
+        '<p class="promo-fine">Order by Sunday 8/23. Cannot be combined with pool wristbands.</p>' +
       '</div>';
 
     function close() {
