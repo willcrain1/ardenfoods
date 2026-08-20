@@ -105,10 +105,10 @@
       '<div class="promo-box">' +
         '<button class="promo-close" aria-label="Close offer">✕</button>' +
         '<span class="promo-eyebrow">📦 Delivery update</span>' +
-        '<h2>Sunday<br>Delivery<br>This Week.</h2>' +
-        '<p>All orders placed between now and Sunday, August 23rd will be delivered on <b>Sunday 8/23</b>.<br><br>Place your order, pay by Zelle, and we\'ll text you when it\'s confirmed.</p>' +
+        '<h2>Monday<br>Delivery<br>This Week.</h2>' +
+        '<p>All orders placed between now and Monday, August 24th will be delivered on <b>Monday 8/24</b>.<br><br>Place your order, pay by Zelle, and we\'ll text you when it\'s confirmed.</p>' +
         '<a href="#shop" class="btn btn-primary" style="width:100%">Shop the lineup →</a>' +
-        '<p class="promo-fine">Order by Sunday 8/23. Cannot be combined with pool wristbands.</p>' +
+        '<p class="promo-fine">Order by Monday 8/24. Cannot be combined with pool wristbands.</p>' +
       '</div>';
 
     function close() {
