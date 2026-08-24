@@ -94,40 +94,6 @@
     document.body.appendChild(footer);
   }
 
-  /* ---------- promo modal ---------- */
-  function buildPromoModal() {
-    var overlay = document.createElement("div");
-    overlay.className = "promo-overlay";
-    overlay.setAttribute("role", "dialog");
-    overlay.setAttribute("aria-modal", "true");
-    overlay.setAttribute("aria-label", "Special offer");
-    overlay.innerHTML =
-      '<div class="promo-box">' +
-        '<button class="promo-close" aria-label="Close offer">✕</button>' +
-        '<span class="promo-eyebrow">📦 Delivery update</span>' +
-        '<h2>Monday<br>Delivery<br>This Week.</h2>' +
-        '<p>All orders placed between now and Monday, August 24th will be delivered on <b>Monday 8/24</b>.<br><br>Place your order, pay by Zelle, and we\'ll text you when it\'s confirmed.</p>' +
-        '<a href="#shop" class="btn btn-primary" style="width:100%">Shop the lineup →</a>' +
-        '<p class="promo-fine">Order by Monday 8/24. Cannot be combined with pool wristbands.</p>' +
-      '</div>';
-
-    function close() {
-      overlay.classList.add("closing");
-      setTimeout(function () { overlay.remove(); }, 260);
-    }
-
-    overlay.addEventListener("click", function (e) {
-      if (e.target === overlay || e.target.closest(".promo-close")) close();
-      if (e.target.closest("a")) close();
-    });
-    document.addEventListener("keydown", function onKey(e) {
-      if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); }
-    });
-
-    document.body.appendChild(overlay);
-    overlay.querySelector(".promo-close").focus();
-  }
-
   /* ---------- scroll reveal ---------- */
   function initReveal() {
     var els = document.querySelectorAll(".reveal");
@@ -171,7 +137,6 @@
     initReveal();
     initAddToCart();
     if (window.Arden) window.Arden.updateBadge();
-    setTimeout(buildPromoModal, 900);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

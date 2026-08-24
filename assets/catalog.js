@@ -31,5 +31,6 @@ window.ARDEN_CATALOG = {
   "ck-marshmallow": { line: "Cookies", name: "Choc Chip + Vanilla Bean Marshmallow",      variant: "per cookie", price: 5 },
   "ck-cream":       { line: "Cookies", name: "Choc Chip Cookies & Cream",                 variant: "per cookie", price: 5 },
   "ck-buttercream": { line: "Cookies", name: "Choc Chip + Vanilla Buttercream",           variant: "per cookie", price: 5 },
-  "ck-pistachio":   { line: "Cookies", name: "Choc Chip + Pistachio Butter Core",         variant: "per cookie", price: 5 }
+  "ck-pistachio":   { line: "Cookies", name: "Choc Chip + Pistachio Butter Core",         variant: "per cookie", price: 5 },
+  "ck-brookie":     { line: "Cookies", name: "HOA Board Brookie",                         variant: "per cookie", price: 5 }
 };
