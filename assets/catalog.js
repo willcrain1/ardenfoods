@@ -30,7 +30,15 @@ window.ARDEN_CATALOG = {
   "ck-choc-dark":   { line: "Cookies", name: "Choc Chip + Dark Chocolate Core",           variant: "per cookie", price: 5 },
   "ck-marshmallow": { line: "Cookies", name: "Choc Chip + Vanilla Bean Marshmallow",      variant: "per cookie", price: 5 },
   "ck-cream":       { line: "Cookies", name: "Choc Chip Cookies & Cream",                 variant: "per cookie", price: 5 },
-  "ck-buttercream": { line: "Cookies", name: "Choc Chip + Vanilla Buttercream",           variant: "per cookie", price: 5 },
   "ck-pistachio":   { line: "Cookies", name: "Choc Chip + Pistachio Butter Core",         variant: "per cookie", price: 5 },
-  "ck-brookie":     { line: "Cookies", name: "HOA Board Brookie",                         variant: "per cookie", price: 5 }
+  "ck-brookie":     { line: "Cookies", name: "HOA Board Brookie",                         variant: "per cookie", price: 5 },
+
+  /* ---------------- COOKIES — The Clogged Sprinkler ---------------- */
+  "cs-cbutter":     { line: "Cookies", name: "Clogged Sprinkler — Cookie Butter Core",    variant: "per cookie", price: 5 },
+  "cs-dubai":       { line: "Cookies", name: "Clogged Sprinkler — Dubai",                 variant: "per cookie", price: 5 },
+  "cs-choc-milk":   { line: "Cookies", name: "Clogged Sprinkler — Milk Chocolate Core",   variant: "per cookie", price: 5 },
+  "cs-choc-dark":   { line: "Cookies", name: "Clogged Sprinkler — Dark Chocolate Core",   variant: "per cookie", price: 5 },
+  "cs-caramel":     { line: "Cookies", name: "Clogged Sprinkler — Caramel Chips",         variant: "per cookie", price: 5 },
+  "cs-chocchoc":    { line: "Cookies", name: "Clogged Sprinkler — Choc Choc Chip",        variant: "per cookie", price: 5 },
+  "cs-marshmallow": { line: "Cookies", name: "Clogged Sprinkler — Toasted Marshmallow",   variant: "per cookie", price: 5 }
 };
