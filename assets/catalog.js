@@ -32,6 +32,7 @@ window.ARDEN_CATALOG = {
   "ck-cream":       { line: "Cookies", name: "Choc Chip Cookies & Cream",                 variant: "per cookie", price: 5 },
   "ck-pistachio":   { line: "Cookies", name: "Choc Chip + Pistachio Butter Core",         variant: "per cookie", price: 5 },
   "ck-brookie":     { line: "Cookies", name: "HOA Board Brookie",                         variant: "per cookie", price: 5 },
+  "ck-funfetti":    { line: "Cookies", name: "Funfetti Cookie",                           variant: "per cookie", price: 5 },
 
   /* ---------------- COOKIES — The Clogged Sprinkler ---------------- */
   "cs-cbutter":     { line: "Cookies", name: "Clogged Sprinkler — Cookie Butter Core",    variant: "per cookie", price: 5 },
